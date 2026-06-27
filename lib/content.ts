@@ -61,7 +61,6 @@ export const features: Feature[] = [
 ];
 
 export interface Collection {
-  emoji: string;
   tag: string;
   title: string;
   desc: string;
@@ -72,7 +71,6 @@ export interface Collection {
 
 export const collections: Collection[] = [
   {
-    emoji: "✨",
     tag: "Nigeria & Ghana",
     title: "Passport to Detty",
     desc: "Celebrate culture, music, food, and nightlife during the most exciting season in West Africa.",
@@ -81,7 +79,6 @@ export const collections: Collection[] = [
     alt: "Dancers in traditional West African dress performing at a festival",
   },
   {
-    emoji: "❤️",
     tag: "Singles 40+",
     title: "Second Chapter Society",
     desc: "For accomplished men and women ready to meet, travel, connect, and create new possibilities.",
@@ -90,7 +87,6 @@ export const collections: Collection[] = [
     alt: "A man and woman laughing together over wine at an outdoor table",
   },
   {
-    emoji: "🥂",
     tag: "Couples Escapes",
     title: "Velvet Vows Retreat",
     desc: "Luxury retreats for couples who want to reconnect, recharge, and rediscover each other.",
@@ -99,7 +95,6 @@ export const collections: Collection[] = [
     alt: "Couple sitting together watching the sunset",
   },
   {
-    emoji: "🌴",
     tag: "Active Retirees",
     title: "Golden Horizons Club",
     desc: "Because retirement is not the end of the adventure — it's the beginning of your next chapter.",
@@ -108,7 +103,6 @@ export const collections: Collection[] = [
     alt: "An older couple holding hands while hiking a scenic trail",
   },
   {
-    emoji: "🌺",
     tag: "Medical & Wellness",
     title: "Renew You Journey",
     desc: "World-class healthcare, wellness experiences, and recovery retreats in select destinations.",
@@ -117,7 +111,6 @@ export const collections: Collection[] = [
     alt: "Woman in a spa robe relaxing with tea",
   },
   {
-    emoji: "👑",
     tag: "Leaders & Founders",
     title: "Black Excellence Experiences",
     desc: "Curated luxury travel celebrating culture, achievement, networking, and legacy.",
@@ -126,7 +119,6 @@ export const collections: Collection[] = [
     alt: "Group of Black professionals in a boardroom meeting",
   },
   {
-    emoji: "💎",
     tag: "Women's Getaways",
     title: "Passport & Prosecco",
     desc: "Travel, laughter, friendship, and unforgettable experiences with women ready to live boldly.",

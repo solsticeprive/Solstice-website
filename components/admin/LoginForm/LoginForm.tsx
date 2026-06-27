@@ -43,10 +43,10 @@ export default function LoginForm({ demoHint }: { demoHint: string }) {
         {isPending ? "Signing In…" : "Sign In"}
       </button>
 
-      <div className={styles.demo}>
+      {/* <div className={styles.demo}>
         <span className={styles.demoLabel}>Demo credentials</span>
         <code className={styles.demoValue}>{demoHint}</code>
-      </div>
+      </div> */}
     </form>
   );
 }

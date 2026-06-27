@@ -25,7 +25,6 @@ export default function Experiences() {
                   className={styles.mediaImage}
                 />
                 <div className={styles.mediaScrim} style={{ background: collection.gradient }} />
-                <span className={styles.emoji}>{collection.emoji}</span>
                 <span className={styles.tag}>{collection.tag}</span>
               </div>
               <div className={styles.body}>
