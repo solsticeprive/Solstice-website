@@ -1,0 +1,83 @@
+.section {
+  background: var(--color-bg);
+  padding: 150px 56px;
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.headerWrap {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.eyebrow {
+  color: var(--color-accent);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.card {
+  display: flex;
+}
+
+.cardInner {
+  background: var(--card-bg);
+  padding: 42px 34px;
+  border-radius: 18px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.quoteMark {
+  font-family: var(--font-serif);
+  font-size: 56px;
+  line-height: 0.4;
+  color: var(--card-accent);
+}
+
+.quoteText {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 1.4;
+  color: var(--card-text);
+  margin: 0;
+  flex: 1;
+}
+
+.attribution {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--card-accent);
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 90px 24px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 72px 20px;
+  }
+}

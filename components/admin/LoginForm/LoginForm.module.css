@@ -1,0 +1,130 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.field input {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-ink);
+  font-size: 14px;
+  font-family: var(--font-sans);
+}
+
+.field input::placeholder {
+  color: #b5ab9c;
+}
+
+.field input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -1px;
+}
+
+.passwordWrap {
+  position: relative;
+}
+
+.passwordWrap input {
+  padding-right: 44px;
+}
+
+.toggle {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: var(--color-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  border-radius: 8px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.toggle:hover {
+  background: var(--color-surface-muted);
+  color: var(--color-ink);
+}
+
+.submit {
+  margin-top: 6px;
+  padding: 14px;
+  border-radius: 999px;
+  border: none;
+  background: var(--color-accent);
+  color: #16110d;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit:hover:not(:disabled) {
+  background: var(--color-accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(192, 144, 47, 0.35);
+}
+
+.submit:disabled {
+  opacity: 0.7;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+.error {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--color-danger-bg);
+  border: 1px solid rgba(184, 65, 47, 0.3);
+  color: var(--color-danger);
+  font-size: 13px;
+}
+
+.demo {
+  margin-top: 4px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.demoLabel {
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  font-weight: 700;
+}
+
+.demoValue {
+  font-size: 13px;
+  color: var(--color-ink);
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+}

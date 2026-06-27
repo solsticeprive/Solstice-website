@@ -1,0 +1,89 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 4px;
+}
+
+.summary {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-ink);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav:hover:not(:disabled) {
+  background: var(--color-surface-muted);
+}
+
+.nav:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pages {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.page {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.page:hover {
+  background: var(--color-surface-muted);
+  color: var(--color-ink);
+}
+
+.active {
+  background: var(--color-accent);
+  color: #16110d;
+}
+
+.active:hover {
+  background: var(--color-accent);
+}
+
+.ellipsis {
+  width: 24px;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+@media (max-width: 560px) {
+  .wrap {
+    justify-content: center;
+    text-align: center;
+  }
+}

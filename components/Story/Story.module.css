@@ -1,0 +1,119 @@
+.section {
+  background: var(--color-bg-alt);
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+}
+
+.portrait {
+  position: relative;
+  min-height: 660px;
+  display: flex;
+  align-items: flex-end;
+  padding: 44px;
+  background: linear-gradient(150deg, #138573 0%, #0c5046 58%, #06322b 100%);
+  overflow: hidden;
+}
+
+.portraitImage {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.portraitScrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(6, 30, 26, 0.15) 0%, rgba(6, 30, 26, 0.65) 100%);
+}
+
+.caption {
+  position: absolute;
+  top: 44px;
+  left: 44px;
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.quoteWrap {
+  position: relative;
+  z-index: 2;
+}
+
+.quote {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 26px 30px;
+  border-radius: 16px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 26px;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.content {
+  padding: 120px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  color: var(--color-accent);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(36px, 4.4vw, 58px);
+  line-height: 1.04;
+  margin: 18px 0 26px;
+  color: var(--color-ink-strong);
+}
+
+.headingItalic {
+  font-style: italic;
+  color: var(--color-green-mid);
+}
+
+.copy {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--color-muted);
+  margin: 0 0 22px;
+  max-width: 540px;
+}
+
+.copy:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    padding: 80px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 64px 24px;
+  }
+
+  .portrait {
+    padding: 28px;
+  }
+}

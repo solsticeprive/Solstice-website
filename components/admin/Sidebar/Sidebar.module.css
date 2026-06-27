@@ -1,0 +1,128 @@
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: var(--color-green-darker);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 20px;
+  position: sticky;
+  top: 0;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 12px 28px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(251, 246, 238, 0.1);
+}
+
+.brandName {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: #fff;
+}
+
+.brandAccent {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.brandTag {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(251, 246, 238, 0.5);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  color: rgba(251, 246, 238, 0.7);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navIcon {
+  flex-shrink: 0;
+}
+
+.navLink:hover {
+  background: rgba(251, 246, 238, 0.06);
+  color: #fff;
+}
+
+.active {
+  background: rgba(191, 155, 78, 0.16);
+  color: var(--color-gold-light);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(251, 246, 238, 0.1);
+}
+
+.footerLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: rgba(251, 246, 238, 0.55);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.footerLink:hover {
+  background: rgba(251, 246, 238, 0.06);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 84px;
+    padding: 20px 12px;
+  }
+
+  .brand {
+    padding: 0 4px 20px;
+  }
+
+  .brandName,
+  .brandTag,
+  .navLink span,
+  .footerLink span {
+    display: none;
+  }
+
+  .navLink,
+  .footerLink {
+    justify-content: center;
+    padding: 12px;
+  }
+}

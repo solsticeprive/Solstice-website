@@ -1,0 +1,327 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 660px;
+  overflow: hidden;
+  background: var(--color-green-darker);
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 1.3s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.image {
+  object-fit: cover;
+  transform: scale(1.02) translate(0, 0);
+  transition: transform 7s ease-out;
+}
+
+.slide.active .image {
+  transform: scale(1.16) translate(-2%, -2%);
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 30, 28, 0.5) 0%,
+    rgba(10, 30, 28, 0.05) 32%,
+    rgba(10, 30, 28, 0.78) 100%
+  );
+}
+
+.captionWrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+}
+
+.caption {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 56px 132px;
+  width: 100%;
+}
+
+.caption > * {
+  max-width: 860px;
+}
+
+.caption {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s cubic-bezier(0.16, 0.84, 0.44, 1);
+}
+
+.slide.active .caption {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.25s;
+}
+
+.kickerRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.kickerLine {
+  width: 42px;
+  height: 2px;
+  background: var(--color-accent);
+}
+
+.kicker {
+  color: #ffe6b8;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.title {
+  font-family: var(--font-serif);
+  color: #fff;
+  font-weight: 400;
+  font-size: clamp(46px, 7.4vw, 112px);
+  line-height: 0.96;
+  margin: 0 0 24px;
+  letter-spacing: -0.01em;
+}
+
+.titleLine {
+  display: block;
+}
+
+.sub {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 20px;
+  line-height: 1.55;
+  max-width: 520px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.overlayInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+}
+
+.counter {
+  position: absolute;
+  right: 56px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  color: #fff;
+}
+
+.counterNum {
+  font-family: var(--font-serif);
+  font-size: 30px;
+}
+
+.counterLine {
+  width: 1px;
+  height: 54px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.counterTotal {
+  font-size: 13px;
+  opacity: 0.65;
+}
+
+.bottomRow {
+  position: absolute;
+  left: 56px;
+  bottom: 48px;
+  right: 56px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  pointer-events: auto;
+  flex-wrap: wrap;
+}
+
+.ctaGroup {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.primaryCta {
+  background: var(--color-accent);
+  color: #16110d;
+  padding: 16px 34px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.primaryCta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 38px rgba(192, 144, 47, 0.5);
+}
+
+.secondaryCta {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  padding: 16px 34px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: background 0.3s ease;
+}
+
+.secondaryCta:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.4s ease;
+}
+
+.dotActive {
+  width: 34px;
+  background: var(--color-accent);
+}
+
+.arrows {
+  display: flex;
+  gap: 12px;
+}
+
+.arrow {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.arrow:hover {
+  background: #fff;
+  color: var(--color-green-darker);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    height: 92vh;
+    min-height: 580px;
+  }
+
+  .caption {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 200px;
+  }
+
+  .kickerRow {
+    margin-bottom: 18px;
+  }
+
+  .title {
+    font-size: clamp(34px, 10vw, 58px);
+    margin-bottom: 18px;
+  }
+
+  .sub {
+    font-size: 15.5px;
+    line-height: 1.55;
+  }
+
+  .bottomRow {
+    left: 24px;
+    right: 24px;
+    bottom: 28px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .ctaGroup {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .primaryCta,
+  .secondaryCta {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .controls {
+    width: 100%;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .arrows {
+    display: none;
+  }
+
+  .dots {
+    gap: 12px;
+  }
+
+  .counter {
+    display: none;
+  }
+}

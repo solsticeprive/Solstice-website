@@ -1,0 +1,97 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import styles from "./Nav.module.css";
+
+const links = [
+  { href: "#experiences", label: "Experiences" },
+  { href: "#difference", label: "Our Difference" },
+  { href: "#story", label: "Story" },
+];
+
+export default function Nav() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [menuOpen]);
+
+  return (
+    <nav
+      className={`${styles.nav} ${scrolled ? styles.scrolled : ""} ${
+        menuOpen ? styles.navMenuOpen : ""
+      }`}
+    >
+      <div className={styles.inner}>
+        <span className={styles.logo}>
+          Solstice <span className={styles.logoAccent}>Privé</span>
+        </span>
+        <div className={styles.links}>
+          {links.map((link) => (
+            <a key={link.href} href={link.href} className={styles.link}>
+              {link.label}
+            </a>
+          ))}
+          <a href="#waitlist" className={styles.cta}>
+            Join Waitlist
+          </a>
+          <button
+            type="button"
+            className={`${styles.menuToggle} ${menuOpen ? styles.menuToggleOpen : ""}`}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span className={styles.bar} />
+            <span className={styles.bar} />
+            <span className={styles.bar} />
+          </button>
+        </div>
+      </div>
+
+      <div
+        className={`${styles.backdrop} ${menuOpen ? styles.backdropVisible : ""}`}
+        onClick={() => setMenuOpen(false)}
+        aria-hidden="true"
+      />
+
+      <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""}`}>
+        <span className={styles.mobileMenuEyebrow}>Menu</span>
+        {links.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            className={styles.mobileLink}
+            onClick={() => setMenuOpen(false)}
+          >
+            <span>{link.label}</span>
+            <span className={styles.mobileLinkArrow}>→</span>
+          </a>
+        ))}
+        <a href="#waitlist" className={styles.mobileCta} onClick={() => setMenuOpen(false)}>
+          Join Waitlist
+        </a>
+      </div>
+    </nav>
+  );
+}

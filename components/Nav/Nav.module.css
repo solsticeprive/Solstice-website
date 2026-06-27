@@ -1,0 +1,269 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  padding: 26px 0;
+  background: transparent;
+  transition: all 0.45s cubic-bezier(0.16, 0.84, 0.44, 1);
+}
+
+.scrolled {
+  padding: 15px 0;
+  background: rgba(10, 51, 46, 0.94);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* backdrop-filter creates a containing block for position:fixed descendants,
+   which would trap .backdrop inside the navbar's own box instead of the
+   viewport — so the menu-open state uses a solid background instead. */
+.navMenuOpen {
+  padding: 15px 0;
+  background: rgba(8, 38, 34, 0.98);
+  backdrop-filter: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 27px;
+  letter-spacing: 0.01em;
+  color: #fff;
+}
+
+.logoAccent {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.link {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.cta {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 11px 24px;
+  background: var(--color-accent);
+  color: #16110d;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: background 0.25s ease;
+}
+
+.cta:hover {
+  background: var(--color-accent-dark);
+}
+
+.menuToggle {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+
+.menuToggle:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.bar {
+  width: 16px;
+  height: 1.5px;
+  border-radius: 2px;
+  background: #fff;
+  transition: transform 0.3s cubic-bezier(0.16, 0.84, 0.44, 1), opacity 0.3s ease;
+}
+
+.menuToggleOpen .bar:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.menuToggleOpen .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menuToggleOpen .bar:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+.backdrop {
+  display: none;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    padding: 0 24px;
+  }
+
+  .link {
+    display: none;
+  }
+
+  .links {
+    gap: 12px;
+  }
+
+  .cta {
+    padding: 10px 18px;
+    font-size: 12px;
+  }
+
+  .menuToggle {
+    display: flex;
+  }
+
+  .backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(6, 16, 14, 0.55);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+
+  .backdropVisible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 16px;
+    right: 16px;
+    margin-top: 10px;
+    background: rgba(8, 38, 34, 0.98);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 28px 56px rgba(0, 0, 0, 0.4);
+    padding: 6px 22px 18px;
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+    pointer-events: none;
+    transition: opacity 0.3s cubic-bezier(0.16, 0.84, 0.44, 1),
+      transform 0.3s cubic-bezier(0.16, 0.84, 0.44, 1);
+  }
+
+  .mobileMenuOpen {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  .mobileMenuEyebrow {
+    display: block;
+    padding: 18px 2px 10px;
+    font-size: 11px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--color-gold-light);
+    font-weight: 700;
+  }
+
+  .mobileLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 2px;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transition: color 0.2s ease, padding-left 0.2s ease;
+  }
+
+  .mobileLink:hover {
+    color: var(--color-gold-light);
+    padding-left: 8px;
+  }
+
+  .mobileLinkArrow {
+    color: var(--color-accent);
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .mobileLink:hover .mobileLinkArrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .mobileCta {
+    display: block;
+    margin-top: 14px;
+    padding: 15px;
+    border-radius: 999px;
+    background: var(--color-accent);
+    color: #16110d;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: background 0.2s ease;
+  }
+
+  .mobileCta:hover {
+    background: var(--color-accent-dark);
+  }
+}
+
+@media (max-width: 420px) {
+  .logo {
+    font-size: 22px;
+  }
+
+  .cta {
+    padding: 9px 14px;
+    font-size: 11px;
+  }
+}

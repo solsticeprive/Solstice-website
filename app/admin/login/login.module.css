@@ -1,0 +1,117 @@
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+}
+
+.visual {
+  position: relative;
+  background: var(--color-green-darker);
+  display: flex;
+  align-items: flex-end;
+  padding: 56px;
+  overflow: hidden;
+}
+
+.visualImage {
+  object-fit: cover;
+}
+
+.visualScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 30, 28, 0.25) 0%,
+    rgba(10, 30, 28, 0.4) 45%,
+    rgba(6, 20, 18, 0.92) 100%
+  );
+}
+
+.visualContent {
+  position: relative;
+  z-index: 1;
+  max-width: 440px;
+}
+
+.visualBrand {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: #fff;
+  margin-bottom: 28px;
+}
+
+.visualBrand em {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.visualQuote {
+  font-family: var(--font-serif);
+  font-size: 27px;
+  line-height: 1.35;
+  color: #fff;
+  margin: 0 0 14px;
+}
+
+.visualQuote em {
+  font-style: italic;
+  color: var(--color-gold-light);
+}
+
+.visualCaption {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(251, 246, 238, 0.55);
+}
+
+.formSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  padding: 40px;
+}
+
+.formCard {
+  width: 100%;
+  max-width: 380px;
+}
+
+.eyebrow {
+  color: var(--color-accent);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 36px;
+  color: var(--color-ink-strong);
+  margin: 14px 0 8px;
+}
+
+.subtext {
+  font-size: 14.5px;
+  color: var(--color-muted);
+  margin: 0 0 32px;
+}
+
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    display: none;
+  }
+
+  .formSide {
+    padding: 24px;
+  }
+}

@@ -1,0 +1,68 @@
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.iconBadge {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.green {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.gold {
+  background: var(--color-gold-bg);
+  color: var(--color-accent-dark);
+}
+
+.warning {
+  background: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+
+.info {
+  background: var(--color-info-bg);
+  color: var(--color-info);
+}
+
+.clay {
+  background: var(--color-clay-bg);
+  color: var(--color-clay);
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-muted);
+}
+
+.value {
+  font-family: var(--font-serif);
+  font-size: 34px;
+  color: var(--color-ink-strong);
+}
+
+.hint {
+  font-size: 13px;
+  color: var(--color-muted);
+}

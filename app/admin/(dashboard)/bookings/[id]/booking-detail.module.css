@@ -1,0 +1,70 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 22px 24px;
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 17px;
+  color: var(--color-ink-strong);
+  margin: 0 0 16px;
+}
+
+.dl {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dl dt {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin: 0 0 2px;
+}
+
+.dl dd {
+  font-size: 14.5px;
+  color: var(--color-ink);
+  margin: 0;
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.terminal {
+  font-size: 14px;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.backLink {
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+  text-decoration: none;
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
