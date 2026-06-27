@@ -1,19 +1,15 @@
 import type { NextConfig } from "next";
 import path from "path";
-import { fileURLToPath } from "url";
-
-// Resolve the project root reliably in both ESM and CJS contexts.
-// `import.meta.url` is available when Next.js compiles the config as ESM;
-// `__filename` is the CJS fallback.
-const _dirname =
-  typeof __dirname !== "undefined"
-    ? __dirname
-    : path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
+  // Explicitly pin the workspace root so Turbopack doesn't walk up to a stray
+  // lockfile in the Docker container's parent directories.
   turbopack: {
-    root: path.resolve(_dirname),
+    root: path.resolve(__dirname),
   },
+  // outputFileTracingRoot is a second anchor that uses a different code path
+  // and works even when the Turbopack Rust binary ignores turbopack.root.
+  outputFileTracingRoot: path.resolve(__dirname),
   images: {
     remotePatterns: [
       {
