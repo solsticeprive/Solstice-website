@@ -1,7 +1,7 @@
 :root {
   /* fonts */
-  --font-serif: var(--font-playfair), Georgia, serif;
-  --font-sans: var(--font-hanken), -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* palette */
   --color-bg: #fbf6ee;
@@ -10,16 +10,22 @@
   --color-ink-strong: #16110d;
   --color-muted: #5a5048;
 
-  --color-accent: #bf9b4e;
-  --color-accent-dark: #a87826;
-  --color-gold-light: #e3c277;
-  --color-clay: #d9542f;
+  /* brand colors */
+  --color-tangerine: #e75c2d;
+  --color-solstice-orange: #f58f00;
+  --color-solstice-gold: #bf9bae;
+  --color-solstice-gold-deep: #8c6478;
 
-  --color-green-deep: #0c3f39;
-  --color-green-darker: #0c2a26;
-  --color-green-mid: #0e6b5e;
-  --color-green-card: #0f4c44;
-  --color-green-footer: #0a332e;
+  --color-accent: var(--color-solstice-orange);
+  --color-accent-dark: var(--color-tangerine);
+  --color-gold-light: var(--color-solstice-gold);
+  --color-clay: var(--color-tangerine);
+
+  --color-dark-deep: #1a1310;
+  --color-dark-darker: #100b09;
+  --color-highlight: var(--color-tangerine);
+  --color-dark-card: #241a15;
+  --color-dark-footer: #150f0c;
 
   /* admin surfaces */
   --color-white: #ffffff;
@@ -35,7 +41,7 @@
   --color-danger-bg: #fbe9e5;
   --color-info: #3f6b8a;
   --color-info-bg: #e9f0f5;
-  --color-gold-bg: #f7ecd6;
+  --color-gold-bg: #f3e9ed;
   --color-clay-bg: #fbe6df;
 }
 

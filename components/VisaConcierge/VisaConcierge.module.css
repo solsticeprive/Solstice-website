@@ -1,0 +1,261 @@
+.section {
+  background: var(--color-bg-alt);
+  padding: 150px 56px;
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.headerWrap {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 56px;
+}
+
+.eyebrow {
+  color: var(--color-accent);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(36px, 4.6vw, 56px);
+  line-height: 1.05;
+  margin: 20px 0 20px;
+  color: var(--color-ink-strong);
+}
+
+.headingItalic {
+  font-style: italic;
+  color: var(--color-accent-dark);
+}
+
+.intro {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid rgba(33, 27, 22, 0.08);
+  border-radius: 18px;
+  padding: 34px 32px;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-ink-strong);
+  margin: 0 0 18px;
+}
+
+.includesList,
+.notIncludedList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.includesList li,
+.notIncludedList li {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--color-ink);
+  padding-left: 24px;
+  position: relative;
+}
+
+.includesList li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.notIncludedList li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-muted);
+  font-weight: 700;
+}
+
+.note {
+  margin: 18px 0 0;
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--color-muted);
+}
+
+.disclaimerBox {
+  background: var(--color-warning-bg);
+  border: 1px solid rgba(184, 134, 43, 0.25);
+  border-radius: 16px;
+  padding: 22px 26px;
+  margin-bottom: 32px;
+}
+
+.disclaimer {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--color-warning);
+}
+
+.bannerSuccess,
+.bannerNotice {
+  text-align: center;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 24px;
+}
+
+.bannerSuccess {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.bannerNotice {
+  background: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+
+.feeBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: var(--color-dark-deep);
+  border-radius: 18px;
+  padding: 30px 36px;
+}
+
+.feeInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.feeLabel {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.feeAmount {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.feeUnit {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.feeActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.cta {
+  background: var(--color-accent);
+  color: #16110d;
+  padding: 16px 30px;
+  border-radius: 999px;
+  border: none;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+}
+
+.cta:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 38px rgba(245, 143, 0, 0.4);
+}
+
+.cta:disabled {
+  opacity: 0.75;
+  cursor: default;
+}
+
+.askLink {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12.5px;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  padding: 0;
+}
+
+.askLink:hover {
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 90px 24px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feeBar {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .feeActions {
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 72px 20px;
+  }
+
+  .card {
+    padding: 28px 24px;
+  }
+}

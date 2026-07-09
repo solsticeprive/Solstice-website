@@ -1,5 +1,5 @@
 .footer {
-  background: var(--color-green-footer);
+  background: var(--color-dark-footer);
   padding: 56px;
 }
 
@@ -14,14 +14,13 @@
 }
 
 .logo {
-  font-family: var(--font-serif);
-  font-size: 24px;
-  color: var(--color-bg);
+  display: flex;
+  align-items: center;
 }
 
-.logoAccent {
-  font-style: italic;
-  color: var(--color-accent);
+.logo img {
+  height: 30px;
+  width: auto;
 }
 
 .tagline {

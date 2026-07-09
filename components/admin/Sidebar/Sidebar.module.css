@@ -1,7 +1,7 @@
 .sidebar {
   width: 260px;
   flex-shrink: 0;
-  background: var(--color-green-darker);
+  background: var(--color-dark-darker);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -20,14 +20,12 @@
 }
 
 .brandName {
-  font-family: var(--font-serif);
-  font-size: 20px;
-  color: #fff;
+  display: flex;
 }
 
-.brandAccent {
-  font-style: italic;
-  color: var(--color-accent);
+.brandName img {
+  height: 26px;
+  width: auto;
 }
 
 .brandTag {
@@ -67,7 +65,7 @@
 }
 
 .active {
-  background: rgba(191, 155, 78, 0.16);
+  background: rgba(191, 155, 174, 0.16);
   color: var(--color-gold-light);
 }
 

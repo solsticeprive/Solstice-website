@@ -42,14 +42,14 @@
 }
 
 .quoteMark {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 56px;
   line-height: 0.4;
   color: var(--card-accent);
 }
 
 .quoteText {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: 23px;
   line-height: 1.4;

@@ -11,12 +11,13 @@
   display: flex;
   align-items: flex-end;
   padding: 44px;
-  background: linear-gradient(150deg, #138573 0%, #0c5046 58%, #06322b 100%);
+  background: linear-gradient(150deg, #3a2a22 0%, #1f1611 58%, #100b09 100%);
   overflow: hidden;
 }
 
 .portraitImage {
   object-fit: cover;
+  object-position: center top;
   z-index: 0;
 }
 
@@ -24,7 +25,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(6, 30, 26, 0.15) 0%, rgba(6, 30, 26, 0.65) 100%);
+  background: linear-gradient(180deg, rgba(16, 11, 9, 0.15) 0%, rgba(16, 11, 9, 0.65) 100%);
 }
 
 .caption {
@@ -50,7 +51,7 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 26px 30px;
   border-radius: 16px;
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-style: italic;
   font-size: 26px;
   color: #fff;
@@ -73,7 +74,7 @@
 }
 
 .heading {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: clamp(36px, 4.4vw, 58px);
   line-height: 1.04;
@@ -83,7 +84,7 @@
 
 .headingItalic {
   font-style: italic;
-  color: var(--color-green-mid);
+  color: var(--color-highlight);
 }
 
 .copy {

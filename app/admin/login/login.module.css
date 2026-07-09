@@ -6,7 +6,7 @@
 
 .visual {
   position: relative;
-  background: var(--color-green-darker);
+  background: var(--color-dark-darker);
   display: flex;
   align-items: flex-end;
   padding: 56px;
@@ -22,9 +22,9 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(10, 30, 28, 0.25) 0%,
-    rgba(10, 30, 28, 0.4) 45%,
-    rgba(6, 20, 18, 0.92) 100%
+    rgba(16, 11, 9, 0.25) 0%,
+    rgba(16, 11, 9, 0.4) 45%,
+    rgba(10, 7, 6, 0.92) 100%
   );
 }
 
@@ -36,19 +36,16 @@
 
 .visualBrand {
   display: block;
-  font-family: var(--font-serif);
-  font-size: 22px;
-  color: #fff;
   margin-bottom: 28px;
 }
 
-.visualBrand em {
-  font-style: italic;
-  color: var(--color-accent);
+.visualBrand img {
+  height: 30px;
+  width: auto;
 }
 
 .visualQuote {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 27px;
   line-height: 1.35;
   color: #fff;
@@ -89,7 +86,7 @@
 }
 
 .heading {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: 36px;
   color: var(--color-ink-strong);

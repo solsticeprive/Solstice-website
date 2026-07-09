@@ -11,7 +11,7 @@
 
 .scrolled {
   padding: 15px 0;
-  background: rgba(10, 51, 46, 0.94);
+  background: rgba(16, 11, 9, 0.94);
   backdrop-filter: blur(12px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
@@ -21,7 +21,7 @@
    viewport — so the menu-open state uses a solid background instead. */
 .navMenuOpen {
   padding: 15px 0;
-  background: rgba(8, 38, 34, 0.98);
+  background: rgba(16, 11, 9, 0.98);
   backdrop-filter: none;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
@@ -38,15 +38,13 @@
 }
 
 .logo {
-  font-family: var(--font-serif);
-  font-size: 27px;
-  letter-spacing: 0.01em;
-  color: #fff;
+  display: flex;
+  align-items: center;
 }
 
-.logoAccent {
-  font-style: italic;
-  color: var(--color-accent);
+.logo img {
+  height: 34px;
+  width: auto;
 }
 
 .links {
@@ -156,7 +154,7 @@
     display: block;
     position: fixed;
     inset: 0;
-    background: rgba(6, 16, 14, 0.55);
+    background: rgba(16, 11, 9, 0.55);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.35s ease;
@@ -175,7 +173,7 @@
     left: 16px;
     right: 16px;
     margin-top: 10px;
-    background: rgba(8, 38, 34, 0.98);
+    background: rgba(16, 11, 9, 0.98);
     backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
@@ -258,8 +256,8 @@
 }
 
 @media (max-width: 420px) {
-  .logo {
-    font-size: 22px;
+  .logo img {
+    height: 26px;
   }
 
   .cta {

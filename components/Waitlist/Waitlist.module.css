@@ -1,5 +1,5 @@
 .section {
-  background: var(--color-green-deep);
+  background: var(--color-dark-deep);
   padding: 150px 56px 0;
   text-align: center;
   position: relative;
@@ -20,7 +20,7 @@
 }
 
 .heading {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: clamp(46px, 6.2vw, 92px);
   line-height: 0.98;
@@ -82,7 +82,7 @@
 }
 
 .marqueeItem {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-style: italic;
   font-size: 38px;
   color: rgba(251, 246, 238, 0.6);

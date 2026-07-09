@@ -7,7 +7,11 @@ import styles from "./WaitlistForm.module.css";
 
 const initialState: WaitlistFormState = { status: "idle" };
 
-export default function WaitlistForm() {
+interface WaitlistFormProps {
+  defaultInterest?: string;
+}
+
+export default function WaitlistForm({ defaultInterest }: WaitlistFormProps) {
   const [state, formAction, isPending] = useActionState(joinWaitlistAction, initialState);
 
   if (state.status === "success") {
@@ -39,7 +43,12 @@ export default function WaitlistForm() {
           aria-label="Email address"
         />
       </div>
-      <select name="interest" defaultValue="" className={styles.select} aria-label="Interested in">
+      <select
+        name="interest"
+        defaultValue={defaultInterest || ""}
+        className={styles.select}
+        aria-label="Interested in"
+      >
         <option value="" disabled>
           I&apos;m interested in… (optional)
         </option>

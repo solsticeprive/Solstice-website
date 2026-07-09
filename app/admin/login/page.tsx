@@ -23,7 +23,7 @@ export default function AdminLoginPage() {
         <div className={styles.visualScrim} />
         <div className={styles.visualContent}>
           <span className={styles.visualBrand}>
-            Solstice <em>Privé</em>
+            <Image src="/assets/logo-1.png" alt="Solstice Privé" width={140} height={38} />
           </span>
           <p className={styles.visualQuote}>
             “Life is short. <em>The time to see the world is now.</em>”

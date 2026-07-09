@@ -3,7 +3,7 @@
   height: 100vh;
   min-height: 660px;
   overflow: hidden;
-  background: var(--color-green-darker);
+  background: var(--color-dark-darker);
 }
 
 .slide {
@@ -34,9 +34,10 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(10, 30, 28, 0.5) 0%,
-    rgba(10, 30, 28, 0.05) 32%,
-    rgba(10, 30, 28, 0.78) 100%
+    rgba(16, 11, 9, 0.55) 0%,
+    rgba(16, 11, 9, 0.15) 30%,
+    rgba(16, 11, 9, 0.68) 65%,
+    rgba(16, 11, 9, 0.92) 100%
   );
 }
 
@@ -84,7 +85,7 @@
 }
 
 .kicker {
-  color: #ffe6b8;
+  color: var(--color-gold-light);
   letter-spacing: 0.26em;
   text-transform: uppercase;
   font-size: 12px;
@@ -92,7 +93,7 @@
 }
 
 .title {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   color: #fff;
   font-weight: 400;
   font-size: clamp(46px, 7.4vw, 112px);
@@ -141,7 +142,7 @@
 }
 
 .counterNum {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 30px;
 }
 
@@ -189,7 +190,7 @@
 
 .primaryCta:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 38px rgba(192, 144, 47, 0.5);
+  box-shadow: 0 16px 38px rgba(245, 143, 0, 0.5);
 }
 
 .secondaryCta {
@@ -257,7 +258,7 @@
 
 .arrow:hover {
   background: #fff;
-  color: var(--color-green-darker);
+  color: var(--color-dark-darker);
 }
 
 @media (max-width: 900px) {

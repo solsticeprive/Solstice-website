@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "@/components/Reveal/Reveal";
 import { collections } from "@/lib/content";
 import styles from "./Experiences.module.css";
@@ -14,25 +15,40 @@ export default function Experiences() {
           </h2>
         </Reveal>
         <div className={styles.grid}>
-          {collections.map((collection) => (
-            <Reveal key={collection.title} className={styles.card}>
-              <div className={styles.media}>
-                <Image
-                  src={collection.image}
-                  alt={collection.alt}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1000px) 50vw, 33vw"
-                  className={styles.mediaImage}
-                />
-                <div className={styles.mediaScrim} style={{ background: collection.gradient }} />
-                <span className={styles.tag}>{collection.tag}</span>
-              </div>
-              <div className={styles.body}>
-                <h3 className={styles.title}>{collection.title}</h3>
-                <p className={styles.desc}>{collection.desc}</p>
-              </div>
-            </Reveal>
-          ))}
+          {collections.map((collection) => {
+            const cardContent = (
+              <>
+                <div className={styles.media}>
+                  <Image
+                    src={collection.image}
+                    alt={collection.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1000px) 50vw, 33vw"
+                    className={styles.mediaImage}
+                  />
+                  <div className={styles.mediaScrim} style={{ background: collection.gradient }} />
+                  <span className={styles.tag}>{collection.tag}</span>
+                  {collection.comingSoon && <span className={styles.comingSoonBadge}>Coming Soon</span>}
+                </div>
+                <div className={styles.body}>
+                  <h3 className={styles.title}>{collection.title}</h3>
+                  <p className={styles.desc}>{collection.desc}</p>
+                </div>
+              </>
+            );
+
+            return (
+              <Reveal key={collection.tag} className={styles.card}>
+                {collection.href ? (
+                  <Link href={collection.href} className={styles.cardLink}>
+                    {cardContent}
+                  </Link>
+                ) : (
+                  cardContent
+                )}
+              </Reveal>
+            );
+          })}
           <Reveal className={styles.ctaCardWrap}>
             <a href="#waitlist" className={styles.ctaCard}>
               <span className={styles.ctaTitle}>Your collection awaits</span>

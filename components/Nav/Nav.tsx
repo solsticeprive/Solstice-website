@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import styles from "./Nav.module.css";
 
 const links = [
   { href: "#experiences", label: "Experiences" },
   { href: "#difference", label: "Our Difference" },
   { href: "#story", label: "Story" },
+  { href: "#visa", label: "Visa Support" },
 ];
 
 export default function Nav() {
@@ -44,7 +46,7 @@ export default function Nav() {
     >
       <div className={styles.inner}>
         <span className={styles.logo}>
-          Solstice <span className={styles.logoAccent}>Privé</span>
+          <Image src="/assets/logo-1.png" alt="Solstice Privé" width={150} height={40} priority />
         </span>
         <div className={styles.links}>
           {links.map((link) => (

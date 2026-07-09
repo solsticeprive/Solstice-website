@@ -3,7 +3,11 @@ import WaitlistForm from "@/components/WaitlistForm/WaitlistForm";
 import { marquee } from "@/lib/content";
 import styles from "./Waitlist.module.css";
 
-export default function Waitlist() {
+interface WaitlistProps {
+  defaultInterest?: string;
+}
+
+export default function Waitlist({ defaultInterest }: WaitlistProps) {
   return (
     <section id="waitlist" className={styles.section}>
       <Reveal className={styles.inner}>
@@ -15,7 +19,7 @@ export default function Waitlist() {
           Join an exclusive community of travelers who believe life should be celebrated,
           explored, and experienced to the fullest.
         </p>
-        <WaitlistForm />
+        <WaitlistForm defaultInterest={defaultInterest} />
       </Reveal>
 
       <div className={styles.marqueeWrap}>

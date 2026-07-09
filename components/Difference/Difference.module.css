@@ -22,7 +22,7 @@
 }
 
 .heading {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: clamp(40px, 5vw, 66px);
   line-height: 1.02;
@@ -32,7 +32,7 @@
 
 .headingItalic {
   font-style: italic;
-  color: var(--color-green-mid);
+  color: var(--color-highlight);
 }
 
 .grid {
@@ -56,7 +56,7 @@
 }
 
 .num {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 46px;
   color: var(--num-color);
   display: block;
@@ -64,7 +64,7 @@
 }
 
 .title {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: 25px;
   margin: 0 0 12px;

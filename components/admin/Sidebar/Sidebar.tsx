@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -27,7 +28,7 @@ export default function Sidebar() {
     <aside className={styles.sidebar}>
       <div className={styles.brand}>
         <span className={styles.brandName}>
-          Solstice <em className={styles.brandAccent}>Privé</em>
+          <Image src="/assets/logo-1.png" alt="Solstice Privé" width={140} height={38} />
         </span>
         <span className={styles.brandTag}>Admin</span>
       </div>

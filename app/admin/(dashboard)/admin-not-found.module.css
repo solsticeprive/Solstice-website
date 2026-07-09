@@ -12,14 +12,14 @@
 }
 
 .eyebrow {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-style: italic;
   font-size: 42px;
   color: var(--color-accent);
 }
 
 .heading {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: 24px;
   color: var(--color-ink-strong);
