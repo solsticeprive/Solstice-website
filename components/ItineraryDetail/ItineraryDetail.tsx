@@ -18,7 +18,7 @@ const CHECKOUT_MESSAGES: Record<string, string> = {
 };
 
 export default function ItineraryDetail() {
-  const { title, tag, summary, heroImage, heroAlt, phases, packages, slug } = lagosItinerary;
+  const { title, tag, summary, heroImage, heroAlt, gallery, phases, packages, slug } = lagosItinerary;
   const [activeModal, setActiveModal] = useState<"book" | "ask" | null>(null);
   const searchParams = useSearchParams();
   const checkoutStatus = searchParams.get("checkout");
@@ -47,6 +47,26 @@ export default function ItineraryDetail() {
               Ask a Question
             </button>
           </div>
+        </div>
+      </section>
+
+      <section className={styles.gallerySection}>
+        <div className={styles.galleryInner}>
+          <Reveal className={styles.galleryGrid}>
+            {gallery.map((item, index) => (
+              <div key={item.image} className={styles.galleryItem} data-span={index === 0 || index === 4 || index === 7 ? "wide" : ""}>
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-width: 900px) 50vw, 25vw"
+                  className={styles.galleryImage}
+                />
+                <div className={styles.galleryScrim} />
+                <span className={styles.galleryCaption}>{item.caption}</span>
+              </div>
+            ))}
+          </Reveal>
         </div>
       </section>
 

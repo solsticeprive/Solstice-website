@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import Nav from "@/components/Nav/Nav";
 import Hero from "@/components/Hero/Hero";
+import Manifesto from "@/components/Manifesto/Manifesto";
 import Why from "@/components/Why/Why";
 import Experiences from "@/components/Experiences/Experiences";
 import Difference from "@/components/Difference/Difference";
@@ -22,6 +23,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <Nav />
       <main>
         <Hero />
+        <Manifesto />
         <Why />
         <Experiences />
         <Difference />

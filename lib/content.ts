@@ -279,6 +279,48 @@ export const lagosItinerary = {
     "Eight days across Lagos and Accra — art galleries, Afrobeats nights, Elmina Castle, and a Christmas dinner under the stars.",
   heroImage: "https://images.unsplash.com/photo-1660675133902-acd1b057f75d?w=1920&q=80",
   heroAlt: "Dancers in traditional West African dress performing at a festival",
+  gallery: [
+    {
+      image: "https://images.unsplash.com/photo-1569706971306-de5d78f6418e?w=1000&q=80",
+      alt: "Lagos rooftops silhouetted against a golden sunset sky",
+      caption: "Lagos at golden hour",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1618434772075-47936b9f2840?w=800&q=80",
+      alt: "Friends rollerblading through Lagos traffic beside a yellow bus",
+      caption: "Street life in Lagos",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1769297468250-dfdea4662b00?w=800&q=80",
+      alt: "A wooden fishing boat beside the whitewashed walls of Elmina Castle",
+      caption: "Elmina Castle, Cape Coast",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1628353100859-d2fb3c142234?w=800&q=80",
+      alt: "Palm-lined residential street in Lagos, Nigeria",
+      caption: "Lagos neighborhoods",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1000&q=80",
+      alt: "Crowd at a concert under colorful stage lights",
+      caption: "Afrobeats nights",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1667988113241-a9819757f6d6?w=800&q=80",
+      alt: "Wooden fishing boats resting on a Ghanaian beach",
+      caption: "Coastal Ghana",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1743637262768-9acaf83ce548?w=800&q=80",
+      alt: "Fishermen pulling in a net together on the beach",
+      caption: "Life on the coast",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1769905226608-2b05fd8d9212?w=1000&q=80",
+      alt: "Visitors admiring colorful African art and textiles in a gallery",
+      caption: "Nike Art Gallery",
+    },
+  ],
   packages: [
     {
       name: "Full Experience Package",
@@ -403,4 +445,51 @@ export const visaConcierge = {
   notIncludedNote: "Not included unless expressly stated in the selected travel package.",
   fee: 150,
   feeUnit: "per traveler",
+};
+
+export const manifesto = {
+  eyebrow: "Our Philosophy",
+  tagline: "Where Extraordinary People Meet Extraordinary Places",
+  collage: [
+    {
+      image: "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?w=900&q=80",
+      alt: "Cliffside view of a turquoise beach cove in Bali, Indonesia",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1645518044910-8223215a9909?w=900&q=80",
+      alt: "A man and woman laughing together over wine at an outdoor table",
+    },
+    {
+      image: "https://images.unsplash.com/photo-1583531352515-8884af319dc1?w=900&q=80",
+      alt: "Colorful colonial balconies along a street in Cartagena, Colombia",
+    },
+  ],
+  paragraphs: [
+    "At Solstice Privé, we don't just plan trips — we curate unforgettable journeys that connect people, cultures, and extraordinary experiences.",
+    "We are a luxury travel community created for curious travelers who want more than a vacation. Our journeys are intentionally designed to immerse you in the heart of each destination through authentic culture, exceptional hospitality, meaningful connections, and experiences you simply can't recreate on your own.",
+    "Built on three guiding principles — Discover. Connect. Transform. — every Solstice Privé experience invites you to see the world differently. Whether you're celebrating life's milestones, exploring with friends, traveling solo, investing in your wellness, or stepping into a new adventure, we believe the best memories are created when travel is shared.",
+    "From vibrant festivals and hidden cultural gems to wellness retreats, culinary discoveries, luxury accommodations, and once-in-a-lifetime moments, our goal is simple: to create journeys that leave you inspired long after you've returned home.",
+    "Because for us, travel isn't just about checking countries off a list. It's about collecting stories, building lifelong friendships, embracing new perspectives, and returning home with a fuller heart.",
+  ],
+  pillars: [
+    {
+      num: "01",
+      label: "Discover",
+      image: "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=900&q=80",
+      alt: "Ornate tiled fountain and mosaic archways in Marrakech, Morocco",
+    },
+    {
+      num: "02",
+      label: "Connect",
+      image: "https://images.unsplash.com/photo-1649019182102-dea1e156d94f?w=900&q=80",
+      alt: "Three women toasting with champagne glasses",
+    },
+    {
+      num: "03",
+      label: "Transform",
+      image: "https://images.unsplash.com/photo-1630595271375-5073a6c0638b?w=900&q=80",
+      alt: "Woman in a spa robe relaxing with tea",
+    },
+  ],
+  closingLine: "Your passport opens the door. Solstice Privé opens the experience.",
 };
