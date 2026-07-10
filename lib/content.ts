@@ -310,11 +310,11 @@ export const lagosItinerary = {
       alt: "Wooden fishing boats resting on a Ghanaian beach",
       caption: "Coastal Ghana",
     },
-    {
-      image: "https://images.unsplash.com/photo-1743637262768-9acaf83ce548?w=800&q=80",
-      alt: "Fishermen pulling in a net together on the beach",
-      caption: "Life on the coast",
-    },
+    // {
+    //   image: "https://images.unsplash.com/photo-1743637262768-9acaf83ce548?w=800&q=80",
+    //   alt: "Fishermen pulling in a net together on the beach",
+    //   caption: "Life on the coast",
+    // },
     {
       image: "https://images.unsplash.com/photo-1769905226608-2b05fd8d9212?w=1000&q=80",
       alt: "Visitors admiring colorful African art and textiles in a gallery",
