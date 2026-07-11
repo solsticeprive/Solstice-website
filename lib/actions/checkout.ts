@@ -3,7 +3,13 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { isStripeConfigured, stripe } from "@/lib/stripe";
-import type { ItineraryPackage } from "@/lib/content";
+
+export interface CheckoutLineItem {
+  name: string;
+  description?: string;
+  amount: number;
+  currency: string;
+}
 
 async function getOrigin(): Promise<string> {
   if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;
@@ -21,11 +27,7 @@ function withCheckoutStatus(path: string, status: string): string {
   return `${base}?checkout=${status}${hash ? `#${hash}` : ""}`;
 }
 
-export async function createCheckoutSessionAction(
-  productName: string,
-  returnPath: string,
-  pkg: ItineraryPackage
-) {
+export async function createCheckoutSessionAction(returnPath: string, lineItems: CheckoutLineItem[]) {
   const origin = await getOrigin();
 
   if (!isStripeConfigured) {
@@ -37,19 +39,17 @@ export async function createCheckoutSessionAction(
   try {
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
-      line_items: [
-        {
-          price_data: {
-            currency: pkg.currency.toLowerCase(),
-            unit_amount: Math.round(pkg.price * 100),
-            product_data: {
-              name: productName,
-              description: pkg.description,
-            },
+      line_items: lineItems.map((item) => ({
+        price_data: {
+          currency: item.currency.toLowerCase(),
+          unit_amount: Math.round(item.amount * 100),
+          product_data: {
+            name: item.name,
+            description: item.description,
           },
-          quantity: 1,
         },
-      ],
+        quantity: 1,
+      })),
       success_url: `${origin}${withCheckoutStatus(returnPath, "success")}`,
       cancel_url: `${origin}${withCheckoutStatus(returnPath, "cancelled")}`,
     });

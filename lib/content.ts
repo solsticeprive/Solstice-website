@@ -74,8 +74,8 @@ export interface Collection {
 export const collections: Collection[] = [
   {
     tag: "Lagos & Accra · Dec 20–27",
-    title: "Lagos Itinerary",
-    desc: "Eight days across Lagos and Accra — art galleries, Afrobeats nights, Elmina Castle, and a Christmas dinner under the stars.",
+    title: "Passport to Detty",
+    desc: "Celebrate culture, music, food, and nightlife during the most exciting season in West Africa.",
     gradient: "linear-gradient(150deg, #f58f00, #e75c2d)",
     image: "https://images.unsplash.com/photo-1660675133902-acd1b057f75d?w=900&q=80",
     alt: "Dancers in traditional West African dress performing at a festival",
@@ -131,7 +131,7 @@ export const collections: Collection[] = [
     title: "Passport & Prosecco",
     desc: "Travel, laughter, friendship, and unforgettable experiences with women ready to live boldly.",
     gradient: "linear-gradient(150deg, #bf9bae, #e75c2d)",
-    image: "https://images.unsplash.com/photo-1649019182102-dea1e156d94f?w=900&q=80",
+    image: "/assets/p&p.jpg",
     alt: "Three women toasting with champagne glasses",
     comingSoon: true,
   },
@@ -269,16 +269,19 @@ export interface ItineraryPackage {
   unit: string;
   description: string;
   includes: string[];
+  depositAmount: number;
 }
 
 export const lagosItinerary = {
   slug: "lagos-accra",
-  title: "Lagos Itinerary",
+  title: "Passport to Detty",
   tag: "Lagos & Accra · Dec 20–27",
-  summary:
-    "Eight days across Lagos and Accra — art galleries, Afrobeats nights, Elmina Castle, and a Christmas dinner under the stars.",
+  summary: "Celebrate culture, music, food, and nightlife during the most exciting season in West Africa.",
   heroImage: "https://images.unsplash.com/photo-1660675133902-acd1b057f75d?w=1920&q=80",
   heroAlt: "Dancers in traditional West African dress performing at a festival",
+  depositDeadline: "August 15, 2026",
+  flightsIncluded: false,
+  cardFeePercent: 4,
   gallery: [
     {
       image: "https://images.unsplash.com/photo-1569706971306-de5d78f6418e?w=1000&q=80",
@@ -334,6 +337,7 @@ export const lagosItinerary = {
         "Nike Art Gallery, Elmina Castle, and Labadi Beach excursions",
         "Concierge support throughout the trip",
       ],
+      depositAmount: 500,
     },
   ] as ItineraryPackage[],
   phases: [

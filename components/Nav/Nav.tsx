@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Nav.module.css";
 
 const links = [
-  { href: "#experiences", label: "Experiences" },
-  { href: "#difference", label: "Our Difference" },
-  { href: "#story", label: "Story" },
-  { href: "#visa", label: "Visa Support" },
+  { href: "/#experiences", label: "Experiences" },
+  { href: "/#difference", label: "Our Difference" },
+  { href: "/#story", label: "Story" },
+  { href: "/#visa", label: "Visa Support" },
 ];
 
 export default function Nav() {
@@ -45,18 +46,18 @@ export default function Nav() {
       }`}
     >
       <div className={styles.inner}>
-        <span className={styles.logo}>
+        <Link href="/" className={styles.logo}>
           <Image src="/assets/logo-1.png" alt="Solstice Privé" width={150} height={40} priority />
-        </span>
+        </Link>
         <div className={styles.links}>
           {links.map((link) => (
-            <a key={link.href} href={link.href} className={styles.link}>
+            <Link key={link.href} href={link.href} className={styles.link}>
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a href="#waitlist" className={styles.cta}>
+          <Link href="/#waitlist" className={styles.cta}>
             Join Waitlist
-          </a>
+          </Link>
           <button
             type="button"
             className={`${styles.menuToggle} ${menuOpen ? styles.menuToggleOpen : ""}`}
@@ -80,7 +81,7 @@ export default function Nav() {
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""}`}>
         <span className={styles.mobileMenuEyebrow}>Menu</span>
         {links.map((link) => (
-          <a
+          <Link
             key={link.href}
             href={link.href}
             className={styles.mobileLink}
@@ -88,11 +89,11 @@ export default function Nav() {
           >
             <span>{link.label}</span>
             <span className={styles.mobileLinkArrow}>→</span>
-          </a>
+          </Link>
         ))}
-        <a href="#waitlist" className={styles.mobileCta} onClick={() => setMenuOpen(false)}>
+        <Link href="/#waitlist" className={styles.mobileCta} onClick={() => setMenuOpen(false)}>
           Join Waitlist
-        </a>
+        </Link>
       </div>
     </nav>
   );

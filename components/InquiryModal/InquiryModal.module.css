@@ -4,6 +4,19 @@
   gap: 16px;
 }
 
+.topicNote {
+  margin: -6px 0 0;
+  font-size: 13px;
+  color: var(--color-muted);
+  background: var(--color-surface-muted);
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+
+.topicNote strong {
+  color: var(--color-ink-strong);
+}
+
 .row {
   display: flex;
   gap: 12px;

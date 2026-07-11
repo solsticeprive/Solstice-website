@@ -69,6 +69,29 @@
   font-weight: 700;
 }
 
+.policyNotes {
+  background: var(--color-surface-muted);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.policyNotes p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-ink);
+}
+
+.paymentOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .reserve {
   display: block;
   width: 100%;
@@ -95,6 +118,35 @@
 .reserve:disabled {
   opacity: 0.7;
   cursor: default;
+}
+
+.wireButton {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #fff;
+  color: var(--color-ink-strong);
+  padding: 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(33, 27, 22, 0.18);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.wireButton:hover {
+  background: var(--color-surface-muted);
+}
+
+.feeNote {
+  margin: 2px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--color-muted);
+  text-align: center;
 }
 
 .secureNote {

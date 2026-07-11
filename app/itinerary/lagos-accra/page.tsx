@@ -5,9 +5,8 @@ import ItineraryDetail from "@/components/ItineraryDetail/ItineraryDetail";
 import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
-  title: "Lagos Itinerary | Solstice Privé",
-  description:
-    "Eight days across Lagos and Accra — art galleries, Afrobeats nights, Elmina Castle, and a Christmas dinner under the stars.",
+  title: "Passport to Detty | Solstice Privé",
+  description: "Celebrate culture, music, food, and nightlife during the most exciting season in West Africa.",
 };
 
 export default function LagosItineraryPage() {

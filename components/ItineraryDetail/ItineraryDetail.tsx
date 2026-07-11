@@ -18,11 +18,30 @@ const CHECKOUT_MESSAGES: Record<string, string> = {
 };
 
 export default function ItineraryDetail() {
-  const { title, tag, summary, heroImage, heroAlt, gallery, phases, packages, slug } = lagosItinerary;
+  const {
+    title,
+    tag,
+    summary,
+    heroImage,
+    heroAlt,
+    gallery,
+    phases,
+    packages,
+    slug,
+    depositDeadline,
+    flightsIncluded,
+    cardFeePercent,
+  } = lagosItinerary;
   const [activeModal, setActiveModal] = useState<"book" | "ask" | null>(null);
+  const [askTopic, setAskTopic] = useState(title);
   const searchParams = useSearchParams();
   const checkoutStatus = searchParams.get("checkout");
   const checkoutMessage = checkoutStatus ? CHECKOUT_MESSAGES[checkoutStatus] : undefined;
+
+  const openAsk = (topic: string) => {
+    setAskTopic(topic);
+    setActiveModal("ask");
+  };
 
   return (
     <>
@@ -43,7 +62,7 @@ export default function ItineraryDetail() {
             <button type="button" className={styles.cta} onClick={() => setActiveModal("book")}>
               Book Now →
             </button>
-            <button type="button" className={styles.ctaSecondary} onClick={() => setActiveModal("ask")}>
+            <button type="button" className={styles.ctaSecondary} onClick={() => openAsk(title)}>
               Ask a Question
             </button>
           </div>
@@ -104,13 +123,31 @@ export default function ItineraryDetail() {
             </Reveal>
           ))}
 
+          <Reveal className={styles.goodToKnow}>
+            <h3 className={styles.goodToKnowTitle}>Good to Know</h3>
+            <ul className={styles.goodToKnowList}>
+              <li>
+                <strong>${packages[0].depositAmount.toLocaleString()} deposit</strong> due by{" "}
+                {depositDeadline} to reserve your spot.
+              </li>
+              {!flightsIncluded && <li>Flights are not included in the package price.</li>}
+              <li>
+                <strong>ACH / Zelle / Wire:</strong> no processing fee.
+              </li>
+              <li>
+                <strong>Credit card:</strong> a {cardFeePercent}% convenience fee applies, where
+                permitted by law and card network rules.
+              </li>
+            </ul>
+          </Reveal>
+
           <Reveal className={styles.ctaWrap}>
             <p className={styles.ctaText}>Spots for this itinerary are limited.</p>
             <div className={styles.ctaGroup}>
               <button type="button" className={styles.cta} onClick={() => setActiveModal("book")}>
                 Book Now →
               </button>
-              <button type="button" className={styles.ctaSecondary} onClick={() => setActiveModal("ask")}>
+              <button type="button" className={styles.ctaSecondary} onClick={() => openAsk(title)}>
                 Ask a Question
               </button>
             </div>
@@ -119,11 +156,19 @@ export default function ItineraryDetail() {
       </section>
 
       <Modal isOpen={activeModal === "book"} onClose={() => setActiveModal(null)} title="Book This Itinerary">
-        <BookingModal itineraryTitle={title} itinerarySlug={slug} packages={packages} />
+        <BookingModal
+          itineraryTitle={title}
+          itinerarySlug={slug}
+          packages={packages}
+          depositDeadline={depositDeadline}
+          flightsIncluded={flightsIncluded}
+          cardFeePercent={cardFeePercent}
+          onRequestWirePayment={openAsk}
+        />
       </Modal>
 
       <Modal isOpen={activeModal === "ask"} onClose={() => setActiveModal(null)} title="Ask a Question">
-        <InquiryModal topic={title} />
+        <InquiryModal topic={askTopic} />
       </Modal>
     </>
   );

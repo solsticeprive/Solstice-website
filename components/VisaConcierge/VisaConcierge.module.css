@@ -242,7 +242,6 @@
   .feeBar {
     justify-content: center;
     text-align: center;
-    flex-direction: column;
   }
 
   .feeActions {

@@ -7,7 +7,7 @@ import Reveal from "@/components/Reveal/Reveal";
 import Modal from "@/components/Modal/Modal";
 import InquiryModal from "@/components/InquiryModal/InquiryModal";
 import { createCheckoutSessionAction } from "@/lib/actions/checkout";
-import { visaConcierge, type ItineraryPackage } from "@/lib/content";
+import { visaConcierge } from "@/lib/content";
 import styles from "./VisaConcierge.module.css";
 
 const CHECKOUT_MESSAGES: Record<string, string> = {
@@ -34,20 +34,14 @@ export default function VisaConcierge() {
   const { eyebrow, intro, includes, disclaimer, notIncluded, notIncludedNote, fee, feeUnit } =
     visaConcierge;
 
-  const visaPackage: ItineraryPackage = {
-    name: "Visa Concierge Service",
-    price: fee,
-    currency: "USD",
-    unit: feeUnit,
-    description: intro,
-    includes,
-  };
-  const checkoutAction = createCheckoutSessionAction.bind(
-    null,
-    "Visa Concierge Service",
-    "/#visa",
-    visaPackage
-  );
+  const checkoutAction = createCheckoutSessionAction.bind(null, "/#visa", [
+    {
+      name: "Visa Concierge Service",
+      description: intro,
+      amount: fee,
+      currency: "USD",
+    },
+  ]);
 
   return (
     <section id="visa" className={styles.section}>

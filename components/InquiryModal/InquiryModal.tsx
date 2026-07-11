@@ -49,6 +49,10 @@ export default function InquiryModal({ topic }: InquiryModalProps) {
     <form action={formAction} className={styles.form}>
       <input type="hidden" name="topic" value={topic} />
 
+      <p className={styles.topicNote}>
+        Regarding: <strong>{topic}</strong>
+      </p>
+
       <div className={styles.row}>
         <div className={styles.field}>
           <label htmlFor="firstName">First name</label>
