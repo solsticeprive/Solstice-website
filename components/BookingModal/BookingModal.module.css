@@ -89,7 +89,34 @@
 .paymentOptions {
   display: flex;
   flex-direction: column;
+  gap: 14px;
+}
+
+.paymentMethod {
+  border: 1px solid rgba(33, 27, 22, 0.1);
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
+}
+
+.paymentMethodTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-ink-strong);
+}
+
+.paymentMethodText {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--color-ink);
+}
+
+.paymentMethodText strong {
+  color: var(--color-accent-dark);
 }
 
 .reserve {
@@ -141,17 +168,31 @@
   background: var(--color-surface-muted);
 }
 
-.feeNote {
-  margin: 2px 0 0;
-  font-size: 12px;
-  line-height: 1.5;
-  color: var(--color-muted);
-  text-align: center;
+.termsBox {
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 18px 20px;
 }
 
-.secureNote {
-  text-align: center;
-  font-size: 12.5px;
+.termsTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-ink-strong);
+  margin: 0 0 12px;
+}
+
+.termsList {
+  margin: 0;
+  padding: 0 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.termsList li {
+  font-size: 12px;
+  line-height: 1.6;
   color: var(--color-muted);
-  margin: 4px 0 0;
 }

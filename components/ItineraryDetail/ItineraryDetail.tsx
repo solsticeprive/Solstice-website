@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Reveal from "@/components/Reveal/Reveal";
 import Modal from "@/components/Modal/Modal";
@@ -9,13 +8,6 @@ import BookingModal from "@/components/BookingModal/BookingModal";
 import InquiryModal from "@/components/InquiryModal/InquiryModal";
 import { lagosItinerary } from "@/lib/content";
 import styles from "./ItineraryDetail.module.css";
-
-const CHECKOUT_MESSAGES: Record<string, string> = {
-  success: "Payment received — welcome aboard! A confirmation email is on its way.",
-  cancelled: "Checkout was cancelled. Your card was not charged.",
-  error: "Something went wrong starting checkout. Please try again or ask us a question.",
-  unavailable: "Online payment isn't live yet. Please use \"Ask a Question\" and we'll help you book.",
-};
 
 export default function ItineraryDetail() {
   const {
@@ -27,16 +19,14 @@ export default function ItineraryDetail() {
     gallery,
     phases,
     packages,
-    slug,
     depositDeadline,
     flightsIncluded,
     cardFeePercent,
+    paymentTerms,
+    paymentContactEmail,
   } = lagosItinerary;
   const [activeModal, setActiveModal] = useState<"book" | "ask" | null>(null);
   const [askTopic, setAskTopic] = useState(title);
-  const searchParams = useSearchParams();
-  const checkoutStatus = searchParams.get("checkout");
-  const checkoutMessage = checkoutStatus ? CHECKOUT_MESSAGES[checkoutStatus] : undefined;
 
   const openAsk = (topic: string) => {
     setAskTopic(topic);
@@ -45,12 +35,6 @@ export default function ItineraryDetail() {
 
   return (
     <>
-      {checkoutMessage && (
-        <div className={checkoutStatus === "success" ? styles.bannerSuccess : styles.bannerNotice}>
-          {checkoutMessage}
-        </div>
-      )}
-
       <section className={styles.hero}>
         <Image src={heroImage} alt={heroAlt} fill className={styles.heroImage} />
         <div className={styles.heroScrim} />
@@ -124,7 +108,7 @@ export default function ItineraryDetail() {
           ))}
 
           <Reveal className={styles.goodToKnow}>
-            <h3 className={styles.goodToKnowTitle}>Good to Know</h3>
+            <h3 className={styles.goodToKnowTitle}>Booking Information</h3>
             <ul className={styles.goodToKnowList}>
               <li>
                 <strong>${packages[0].depositAmount.toLocaleString()} deposit</strong> due by{" "}
@@ -132,11 +116,11 @@ export default function ItineraryDetail() {
               </li>
               {!flightsIncluded && <li>Flights are not included in the package price.</li>}
               <li>
-                <strong>ACH / Zelle / Wire:</strong> no processing fee.
+                <strong>ACH / Zelle / Wire:</strong> no processing fee. Send to {paymentContactEmail}.
               </li>
               <li>
                 <strong>Credit card:</strong> a {cardFeePercent}% convenience fee applies, where
-                permitted by law and card network rules.
+                permitted by law and card network rules. Email {paymentContactEmail} to arrange.
               </li>
             </ul>
           </Reveal>
@@ -157,12 +141,12 @@ export default function ItineraryDetail() {
 
       <Modal isOpen={activeModal === "book"} onClose={() => setActiveModal(null)} title="Book This Itinerary">
         <BookingModal
-          itineraryTitle={title}
-          itinerarySlug={slug}
           packages={packages}
           depositDeadline={depositDeadline}
           flightsIncluded={flightsIncluded}
           cardFeePercent={cardFeePercent}
+          paymentTerms={paymentTerms}
+          paymentContactEmail={paymentContactEmail}
           onRequestWirePayment={openAsk}
         />
       </Modal>

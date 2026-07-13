@@ -7,13 +7,13 @@ export interface Slide {
 }
 
 export const slides: Slide[] = [
-  {
-    kicker: "Lagos · Nigeria",
-    title: "Where the World\nWaits for You",
-    sub: "Travel isn't just about where you go. It's about who you become along the way.",
-    image: "/assets/lagos.jpg",
-    alt: "Lagos city skyline with Eko bridge at night",
-  },
+  // {
+  //   kicker: "Lagos · Nigeria",
+  //   title: "Where the World\nWaits for You",
+  //   sub: "Travel isn't just about where you go. It's about who you become along the way.",
+  //   image: "/assets/lagos.jpg",
+  //   alt: "Lagos city skyline with Eko bridge at night",
+  // },
   {
     kicker: "Santorini · Greece",
     title: "Romance Written\nin Blue & White",
@@ -22,26 +22,26 @@ export const slides: Slide[] = [
     alt: "Whitewashed clifftop village of Santorini, Greece at dusk",
   },
   {
-    kicker: "Marrakech · Morocco",
+    kicker: "Seoul · Korea",
     title: "Colour, Spice\n& Endless Wonder",
     sub: "Curated cultural experiences that balance luxury, discovery, and unforgettable moments.",
-    image: "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=1920&q=80",
+    image: "/assets/Seoul.jpeg",
     alt: "Ornate tiled fountain and mosaic archways in Marrakech, Morocco",
   },
   {
-    kicker: "Cartagena · Colombia",
+    kicker: "Beijing · China",
     title: "Live Boldly,\nTravel Together",
     sub: "Travel, laughter, and friendship with people who are ready to experience life fully.",
-    image: "https://images.unsplash.com/photo-1583531352515-8884af319dc1?w=1920&q=80",
+    image: "/assets/Beijing.jpeg",
     alt: "Colorful colonial balconies along a street in Cartagena, Colombia",
   },
-  {
-    kicker: "Dubai · UAE",
-    title: "Extraordinary,\nBy Design",
-    sub: "Exclusive access to private events and experiences unavailable to the average traveler.",
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=80",
-    alt: "Dubai skyline with the Burj Khalifa at sunset",
-  },
+  // {
+  //   kicker: "Dubai · UAE",
+  //   title: "Extraordinary,\nBy Design",
+  //   sub: "Exclusive access to private events and experiences unavailable to the average traveler.",
+  //   image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=80",
+  //   alt: "Dubai skyline with the Burj Khalifa at sunset",
+  // },
 ];
 
 export interface Feature {
@@ -77,7 +77,7 @@ export const collections: Collection[] = [
     title: "Passport to Detty",
     desc: "Celebrate culture, music, food, and nightlife during the most exciting season in West Africa.",
     gradient: "linear-gradient(150deg, #f58f00, #e75c2d)",
-    image: "https://images.unsplash.com/photo-1660675133902-acd1b057f75d?w=900&q=80",
+    image: "/assets/detty.jpeg",
     alt: "Dancers in traditional West African dress performing at a festival",
     href: "/itinerary/lagos-accra",
   },
@@ -277,11 +277,19 @@ export const lagosItinerary = {
   title: "Passport to Detty",
   tag: "Lagos & Accra · Dec 20–27",
   summary: "Celebrate culture, music, food, and nightlife during the most exciting season in West Africa.",
-  heroImage: "https://images.unsplash.com/photo-1660675133902-acd1b057f75d?w=1920&q=80",
+  heroImage: "/assets/detty.jpeg",
   heroAlt: "Dancers in traditional West African dress performing at a festival",
   depositDeadline: "August 15, 2026",
   flightsIncluded: false,
   cardFeePercent: 4,
+  paymentContactEmail: "Solsticeprive@gmail.com",
+  paymentTerms: [
+    "The initial deposit secures your reservation. The remaining balance will be divided into equal monthly installments.",
+    "Monthly payments are required and must be received by the scheduled due date to keep your reservation in good standing.",
+    "Failure to make a scheduled monthly payment may result in the cancellation of your reservation. In such cases, all payments previously made may be forfeited in accordance with our cancellation and refund policy.",
+    "The final payment is due no later than one (1) month prior to the departure date. Reservations with an outstanding balance after the final payment deadline may be canceled.",
+    "Guests choosing to pay via Zelle are responsible for notifying Solstice Privé immediately after each payment is sent. Please include your full name and trip name in the payment memo, when possible, and retain your payment confirmation for your records. Solstice Privé is not responsible for payments that cannot be matched due to insufficient payment information or failure to provide notification.",
+  ],
   gallery: [
     {
       image: "https://images.unsplash.com/photo-1569706971306-de5d78f6418e?w=1000&q=80",
