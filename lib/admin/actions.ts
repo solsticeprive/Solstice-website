@@ -32,9 +32,6 @@ export async function updateTripAction(id: string, formData: FormData) {
   redirect("/admin/trips");
 }
 
-// formData is unused but required so the bound function (id, status pre-filled)
-// still matches the (formData) => void signature React expects on <form action>.
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function updateBookingStatusAction(id: string, status: BookingStatus, _formData: FormData) {
   await updateBookingStatus(id, status);
   redirect(`/admin/bookings/${id}`);
