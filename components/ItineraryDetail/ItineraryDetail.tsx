@@ -72,16 +72,7 @@ export default function ItineraryDetail() {
             </div>
             <h2 className={styles.overviewDuration}>{overview.duration}</h2>
             <p className={styles.overviewBreakdown}>({overview.durationBreakdown})</p>
-            <p className={styles.overviewDeposit}>{overview.depositPrompt}</p>
-          </Reveal>
 
-          <Reveal className={styles.bookingSection}>
-            <BookingOptions
-              packages={packages}
-              depositDeadline={depositDeadline}
-              flightsIncluded={flightsIncluded}
-              paymentContactEmail={paymentContactEmail}
-            />
           </Reveal>
 
           {phases.map((phase) => (
@@ -115,6 +106,15 @@ export default function ItineraryDetail() {
               </div>
             </Reveal>
           ))}
+
+          <Reveal className={styles.bookingSection}>
+            <BookingOptions
+              packages={packages}
+              depositDeadline={depositDeadline}
+              flightsIncluded={flightsIncluded}
+              paymentContactEmail={paymentContactEmail}
+            />
+          </Reveal>
 
           <Reveal className={styles.termsBox}>
             <h3 className={styles.termsTitle}>Payment Plan Terms</h3>
