@@ -1,4 +1,4 @@
-import type { Booking, BookingStatus, Inquiry, Trip, TripInput, WaitlistSignup } from "./types";
+import type { Booking, BookingStatus, Trip, TripInput, WaitlistSignup } from "./types";
 
 // Mock data store. Swap these accessors for real API/database calls later —
 // the function signatures are already async so call sites won't need to change.
@@ -197,29 +197,6 @@ export async function addWaitlistSignup(input: {
   };
   waitlistSignups.unshift(signup);
   return signup;
-}
-
-const inquiries: Inquiry[] = [];
-
-export async function addInquiry(input: {
-  firstName: string;
-  lastName: string;
-  countryCode: string;
-  phone: string;
-  question: string;
-  topic: string;
-}): Promise<Inquiry> {
-  const inquiry: Inquiry = {
-    id: `inq-${inquiries.length + 1}`,
-    ...input,
-    submittedAt: new Date().toISOString().slice(0, 10),
-  };
-  inquiries.unshift(inquiry);
-  return inquiry;
-}
-
-export async function getInquiries(): Promise<Inquiry[]> {
-  return inquiries;
 }
 
 export interface DashboardStats {

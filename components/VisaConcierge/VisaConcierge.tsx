@@ -1,47 +1,25 @@
-"use client";
-
-import { useState } from "react";
-import { useFormStatus } from "react-dom";
-import { useSearchParams } from "next/navigation";
 import Reveal from "@/components/Reveal/Reveal";
-import Modal from "@/components/Modal/Modal";
-import InquiryModal from "@/components/InquiryModal/InquiryModal";
-import { createCheckoutSessionAction } from "@/lib/actions/checkout";
 import { visaConcierge } from "@/lib/content";
 import styles from "./VisaConcierge.module.css";
 
-const CHECKOUT_MESSAGES: Record<string, string> = {
-  success: "Payment received — we'll be in touch shortly to begin your visa support.",
-  cancelled: "Checkout was cancelled. Your card was not charged.",
-  error: "Something went wrong starting checkout. Please try again or ask us a question.",
-  unavailable: "Online payment isn't live yet. Please use \"Ask a question instead\" and we'll help you book.",
-};
-
-function PayButton() {
-  const { pending } = useFormStatus();
-  return (
-    <button type="submit" className={styles.cta} disabled={pending}>
-      {pending ? "Redirecting to secure checkout…" : `Pay $${visaConcierge.fee} — Reserve Visa Support →`}
-    </button>
-  );
-}
-
 export default function VisaConcierge() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const searchParams = useSearchParams();
-  const checkoutStatus = searchParams.get("checkout");
-  const checkoutMessage = checkoutStatus ? CHECKOUT_MESSAGES[checkoutStatus] : undefined;
-  const { eyebrow, intro, includes, disclaimer, notIncluded, notIncludedNote, fee, feeUnit } =
-    visaConcierge;
+  const {
+    eyebrow,
+    intro,
+    includes,
+    disclaimer,
+    notIncluded,
+    notIncludedNote,
+    fee,
+    feeUnit,
+    paymentContactEmail,
+  } = visaConcierge;
 
-  const checkoutAction = createCheckoutSessionAction.bind(null, "/#visa", [
-    {
-      name: "Visa Concierge Service",
-      description: intro,
-      amount: fee,
-      currency: "USD",
-    },
-  ]);
+  const notifyHref = `mailto:${paymentContactEmail}?subject=${encodeURIComponent(
+    "Zelle payment sent — Visa Concierge Service"
+  )}&body=${encodeURIComponent(
+    `Hi Solstice Privé,\n\nI've sent my $${fee} payment for the Visa Concierge Service via Zelle.\n\nFull name:\n`
+  )}`;
 
   return (
     <section id="visa" className={styles.section}>
@@ -79,12 +57,6 @@ export default function VisaConcierge() {
           <p className={styles.disclaimer}>{disclaimer}</p>
         </Reveal>
 
-        {checkoutMessage && (
-          <p className={checkoutStatus === "success" ? styles.bannerSuccess : styles.bannerNotice}>
-            {checkoutMessage}
-          </p>
-        )}
-
         <Reveal className={styles.feeBar} delay={3}>
           <div className={styles.feeInfo}>
             <span className={styles.feeLabel}>Visa Concierge Service Fee</span>
@@ -92,20 +64,20 @@ export default function VisaConcierge() {
               ${fee} <span className={styles.feeUnit}>{feeUnit}</span>
             </span>
           </div>
-          <div className={styles.feeActions}>
-            <form action={checkoutAction}>
-              <PayButton />
-            </form>
-            <button type="button" className={styles.askLink} onClick={() => setModalOpen(true)}>
-              Ask a question instead
-            </button>
+        </Reveal>
+
+        <Reveal className={styles.paymentOptions} delay={4}>
+          <div className={styles.paymentMethod}>
+            <span className={styles.paymentMethodTitle}>Pay by ACH / Zelle / Wire — no fee</span>
+            <p className={styles.paymentMethodText}>
+              Send your ${fee} payment via Zelle to <strong>{paymentContactEmail}</strong>.
+            </p>
+            <a href={notifyHref} className={styles.wireButton}>
+              Notify Us You&apos;ve Sent Payment →
+            </a>
           </div>
         </Reveal>
       </div>
-
-      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} title="Ask About Visa Support">
-        <InquiryModal topic="Visa Concierge Service" />
-      </Modal>
     </section>
   );
 }

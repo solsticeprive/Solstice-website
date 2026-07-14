@@ -1,6 +1,8 @@
 "use server";
 
 import { addWaitlistSignup } from "@/lib/admin/data";
+import { resend, isResendConfigured } from "@/lib/resend";
+import { contactEmail } from "@/lib/content";
 
 export interface WaitlistFormState {
   status: "idle" | "success" | "error";
@@ -26,6 +28,20 @@ export async function joinWaitlistAction(
   }
 
   await addWaitlistSignup({ name, email, interest: interest || "General" });
+
+  if (isResendConfigured) {
+    try {
+      await resend.emails.send({
+        from: "Solstice Privé Waitlist <onboarding@resend.dev>",
+        to: contactEmail,
+        replyTo: email,
+        subject: `New waitlist signup — ${name}`,
+        text: `${name} just joined the Solstice Privé waitlist.\n\nEmail: ${email}\nInterested in: ${interest || "General"}`,
+      });
+    } catch (error) {
+      console.error("Failed to send waitlist notification email:", error);
+    }
+  }
 
   return { status: "success", message: "You're on the list! We'll be in touch soon." };
 }

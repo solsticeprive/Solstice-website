@@ -1,11 +1,6 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import Reveal from "@/components/Reveal/Reveal";
-import Modal from "@/components/Modal/Modal";
-import BookingModal from "@/components/BookingModal/BookingModal";
-import InquiryModal from "@/components/InquiryModal/InquiryModal";
+import BookingOptions from "@/components/BookingOptions/BookingOptions";
 import { lagosItinerary } from "@/lib/content";
 import styles from "./ItineraryDetail.module.css";
 
@@ -17,21 +12,16 @@ export default function ItineraryDetail() {
     heroImage,
     heroAlt,
     gallery,
-    phases,
+    overview,
     packages,
+    phases,
     depositDeadline,
     flightsIncluded,
-    cardFeePercent,
     paymentTerms,
     paymentContactEmail,
   } = lagosItinerary;
-  const [activeModal, setActiveModal] = useState<"book" | "ask" | null>(null);
-  const [askTopic, setAskTopic] = useState(title);
 
-  const openAsk = (topic: string) => {
-    setAskTopic(topic);
-    setActiveModal("ask");
-  };
+  const askHref = `mailto:${paymentContactEmail}?subject=${encodeURIComponent(`Question about ${title}`)}`;
 
   return (
     <>
@@ -43,12 +33,9 @@ export default function ItineraryDetail() {
           <h1 className={styles.title}>{title}</h1>
           <p className={styles.summary}>{summary}</p>
           <div className={styles.heroCtaGroup}>
-            <button type="button" className={styles.cta} onClick={() => setActiveModal("book")}>
-              Book Now →
-            </button>
-            <button type="button" className={styles.ctaSecondary} onClick={() => openAsk(title)}>
+            <a href={askHref} className={styles.cta}>
               Ask a Question
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -75,6 +62,28 @@ export default function ItineraryDetail() {
 
       <section className={styles.body}>
         <div className={styles.inner}>
+          <Reveal className={styles.overview}>
+            <div className={styles.overviewDestinations}>
+              {overview.destinations.map((destination) => (
+                <span key={destination} className={styles.overviewDestination}>
+                  {destination}
+                </span>
+              ))}
+            </div>
+            <h2 className={styles.overviewDuration}>{overview.duration}</h2>
+            <p className={styles.overviewBreakdown}>({overview.durationBreakdown})</p>
+            <p className={styles.overviewDeposit}>{overview.depositPrompt}</p>
+          </Reveal>
+
+          <Reveal className={styles.bookingSection}>
+            <BookingOptions
+              packages={packages}
+              depositDeadline={depositDeadline}
+              flightsIncluded={flightsIncluded}
+              paymentContactEmail={paymentContactEmail}
+            />
+          </Reveal>
+
           {phases.map((phase) => (
             <Reveal key={phase.phase} className={styles.phase}>
               <div className={styles.phaseHeader}>
@@ -107,53 +116,25 @@ export default function ItineraryDetail() {
             </Reveal>
           ))}
 
-          <Reveal className={styles.goodToKnow}>
-            <h3 className={styles.goodToKnowTitle}>Booking Information</h3>
-            <ul className={styles.goodToKnowList}>
-              <li>
-                <strong>${packages[0].depositAmount.toLocaleString()} deposit</strong> due by{" "}
-                {depositDeadline} to reserve your spot.
-              </li>
-              {!flightsIncluded && <li>Flights are not included in the package price.</li>}
-              <li>
-                <strong>ACH / Zelle / Wire:</strong> no processing fee. Send to {paymentContactEmail}.
-              </li>
-              <li>
-                <strong>Credit card:</strong> a {cardFeePercent}% convenience fee applies, where
-                permitted by law and card network rules. Email {paymentContactEmail} to arrange.
-              </li>
+          <Reveal className={styles.termsBox}>
+            <h3 className={styles.termsTitle}>Payment Plan Terms</h3>
+            <ul className={styles.termsList}>
+              {paymentTerms.map((term) => (
+                <li key={term}>{term}</li>
+              ))}
             </ul>
           </Reveal>
 
           <Reveal className={styles.ctaWrap}>
             <p className={styles.ctaText}>Spots for this itinerary are limited.</p>
             <div className={styles.ctaGroup}>
-              <button type="button" className={styles.cta} onClick={() => setActiveModal("book")}>
-                Book Now →
-              </button>
-              <button type="button" className={styles.ctaSecondary} onClick={() => openAsk(title)}>
+              <a href={askHref} className={styles.cta}>
                 Ask a Question
-              </button>
+              </a>
             </div>
           </Reveal>
         </div>
       </section>
-
-      <Modal isOpen={activeModal === "book"} onClose={() => setActiveModal(null)} title="Book This Itinerary">
-        <BookingModal
-          packages={packages}
-          depositDeadline={depositDeadline}
-          flightsIncluded={flightsIncluded}
-          cardFeePercent={cardFeePercent}
-          paymentTerms={paymentTerms}
-          paymentContactEmail={paymentContactEmail}
-          onRequestWirePayment={openAsk}
-        />
-      </Modal>
-
-      <Modal isOpen={activeModal === "ask"} onClose={() => setActiveModal(null)} title="Ask a Question">
-        <InquiryModal topic={askTopic} />
-      </Modal>
     </>
   );
 }

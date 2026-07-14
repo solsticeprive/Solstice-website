@@ -1,6 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { socialLinks } from "@/lib/content";
+import { InstagramIcon, TikTokIcon, FacebookIcon } from "./SocialIcons";
 import styles from "./Footer.module.css";
+
+const socialIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  Instagram: InstagramIcon,
+  TikTok: TikTokIcon,
+  Facebook: FacebookIcon,
+};
 
 export default function Footer() {
   return (
@@ -12,6 +20,23 @@ export default function Footer() {
         <span className={styles.tagline}>
           Luxury Experiences. Meaningful Connections. Extraordinary Memories.
         </span>
+        <div className={styles.socials}>
+          {socialLinks.map((social) => {
+            const Icon = socialIcons[social.label];
+            return (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className={styles.socialLink}
+              >
+                <Icon className={styles.socialIcon} />
+              </a>
+            );
+          })}
+        </div>
         <span className={styles.copyright}>© 2026 Solstice Privé</span>
       </div>
     </footer>

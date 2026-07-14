@@ -50,14 +50,3 @@ export interface WaitlistSignup {
   interest: string;
   signedUpAt: string;
 }
-
-export interface Inquiry {
-  id: string;
-  firstName: string;
-  lastName: string;
-  countryCode: string;
-  phone: string;
-  question: string;
-  topic: string;
-  submittedAt: string;
-}

@@ -1,3 +1,11 @@
+export const contactEmail = "Solsticeprive@gmail.com";
+
+export const socialLinks = [
+  { label: "Instagram", href: "https://www.instagram.com/solsticeprive?igsh=MTFobHk3NWlqYXU3bw==" },
+  { label: "TikTok", href: "https://www.tiktok.com/@solsticeprive?_r=1&_t=ZS-97wVr5GBjdQ" },
+  { label: "Facebook", href: "https://www.facebook.com/share/199sKeL5P5/?mibextid=wwXIfr" },
+];
+
 export interface Slide {
   kicker: string;
   title: string;
@@ -23,25 +31,39 @@ export const slides: Slide[] = [
   },
   {
     kicker: "Seoul · Korea",
-    title: "Colour, Spice\n& Endless Wonder",
-    sub: "Curated cultural experiences that balance luxury, discovery, and unforgettable moments.",
+    title: "Extraordinary, \n By Design",
+    sub: "Luxury meets culture.  Vibrant. Dynamic. Unforgettable.",
     image: "/assets/Seoul.jpeg",
     alt: "Ornate tiled fountain and mosaic archways in Marrakech, Morocco",
   },
   {
     kicker: "Beijing · China",
-    title: "Live Boldly,\nTravel Together",
-    sub: "Travel, laughter, and friendship with people who are ready to experience life fully.",
+    title: "Journey to the Past",
+    sub: "Where ancient history meets modern luxury.  Majestic. Timeless. Unforgettable.",
     image: "/assets/Beijing.jpeg",
     alt: "Colorful colonial balconies along a street in Cartagena, Colombia",
   },
-  // {
-  //   kicker: "Dubai · UAE",
-  //   title: "Extraordinary,\nBy Design",
-  //   sub: "Exclusive access to private events and experiences unavailable to the average traveler.",
-  //   image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=80",
-  //   alt: "Dubai skyline with the Burj Khalifa at sunset",
-  // },
+  {
+    kicker: "Marrakech · Morocco",
+    title: "Colour, Spice\n& Endless Wonder",
+    sub: "Curated cultural experiences that balance luxury, discovery, and unforgettable moments.",
+    image: "https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=1920&q=80",
+    alt: "Ornate tiled fountain and mosaic archways in Marrakech, Morocco",
+  },
+  {
+    kicker: "Cartagena · Colombia",
+    title: "Live Boldly,\nTravel Together",
+    sub: "Travel, laughter, and friendship with people who are ready to experience life fully.",
+    image: "https://images.unsplash.com/photo-1583531352515-8884af319dc1?w=1920&q=80",
+    alt: "Colorful colonial balconies along a street in Cartagena, Colombia",
+  },
+  {
+    kicker: "Dubai · UAE",
+    title: "Extraordinary,\nBy Design",
+    sub: "Exclusive access to private events and experiences unavailable to the average traveler.",
+    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=80",
+    alt: "Dubai skyline with the Burj Khalifa at sunset",
+  },
 ];
 
 export interface Feature {
@@ -281,8 +303,7 @@ export const lagosItinerary = {
   heroAlt: "Dancers in traditional West African dress performing at a festival",
   depositDeadline: "August 15, 2026",
   flightsIncluded: false,
-  cardFeePercent: 4,
-  paymentContactEmail: "Solsticeprive@gmail.com",
+  paymentContactEmail: contactEmail,
   paymentTerms: [
     "The initial deposit secures your reservation. The remaining balance will be divided into equal monthly installments.",
     "Monthly payments are required and must be received by the scheduled due date to keep your reservation in good standing.",
@@ -332,15 +353,35 @@ export const lagosItinerary = {
       caption: "Nike Art Gallery",
     },
   ],
+  overview: {
+    destinations: ["Lagos, Nigeria.", "Accra, Ghana."],
+    duration: "7 Nights in West Africa",
+    durationBreakdown: "3 days in Lagos, 4 days in Accra",
+    depositPrompt: "Make an initial deposit of $500 now to secure your spot.",
+  },
   packages: [
     {
-      name: "Full Experience Package",
-      price: 4200,
+      name: "Single Occupancy",
+      price: 2999,
       currency: "USD",
       unit: "per person",
-      description: "The complete eight-day Lagos & Accra experience, door to door.",
+      description: "One person per room.",
       includes: [
-        "Accommodation for all 8 days across Lagos & Accra",
+        "Accommodation for all 7 nights across Lagos & Accra",
+        "All group dinners, the Welcome Dinner, and Christmas Dinner",
+        "Nike Art Gallery, Elmina Castle, and Labadi Beach excursions",
+        "Concierge support throughout the trip",
+      ],
+      depositAmount: 500,
+    },
+    {
+      name: "Double Occupancy",
+      price: 2100,
+      currency: "USD",
+      unit: "per person",
+      description: "Shared room (two people).",
+      includes: [
+        "Accommodation for all 7 nights across Lagos & Accra",
         "All group dinners, the Welcome Dinner, and Christmas Dinner",
         "Nike Art Gallery, Elmina Castle, and Labadi Beach excursions",
         "Concierge support throughout the trip",
@@ -457,6 +498,7 @@ export const visaConcierge = {
   notIncludedNote: "Not included unless expressly stated in the selected travel package.",
   fee: 150,
   feeUnit: "per traveler",
+  paymentContactEmail: contactEmail,
 };
 
 export const manifesto = {
