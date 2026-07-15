@@ -1,4 +1,4 @@
-export const contactEmail = "Solsticeprive@gmail.com";
+export const contactEmail = "solsticeprive@gmail.com";
 
 export const socialLinks = [
   { label: "Instagram", href: "https://www.instagram.com/solsticeprive?igsh=MTFobHk3NWlqYXU3bw==" },
