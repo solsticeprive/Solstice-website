@@ -16,7 +16,7 @@ export default function VisaConcierge() {
   } = visaConcierge;
 
   const notifyHref = `mailto:${paymentContactEmail}?subject=${encodeURIComponent(
-    "Zelle payment sent — Visa Concierge Service"
+    "Zelle payment sent, Visa Concierge Service"
   )}&body=${encodeURIComponent(
     `Hi Solstice Privé,\n\nI've sent my $${fee} payment for the Visa Concierge Service via Zelle.\n\nFull name:\n`
   )}`;
@@ -68,7 +68,7 @@ export default function VisaConcierge() {
 
         <Reveal className={styles.paymentOptions} delay={4}>
           <div className={styles.paymentMethod}>
-            <span className={styles.paymentMethodTitle}>Pay by ACH / Zelle / Wire — no fee</span>
+            <span className={styles.paymentMethodTitle}>Pay by ACH / Zelle / Wire, no fee</span>
             <p className={styles.paymentMethodText}>
               Send your ${fee} payment via Zelle to <strong>{paymentContactEmail}</strong>.
             </p>

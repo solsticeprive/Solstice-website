@@ -35,7 +35,7 @@ export async function joinWaitlistAction(
         from: "Solstice Privé Waitlist <onboarding@resend.dev>",
         to: contactEmail,
         replyTo: email,
-        subject: `New waitlist signup — ${name}`,
+        subject: `New waitlist signup, ${name}`,
         text: `${name} just joined the Solstice Privé waitlist.\n\nEmail: ${email}\nInterested in: ${interest || "General"}`,
       });
     } catch (error) {

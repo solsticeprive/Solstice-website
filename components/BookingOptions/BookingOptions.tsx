@@ -19,7 +19,7 @@ export default function BookingOptions({
       {packages.map((pkg) => {
         const deposit = pkg.depositAmount;
         const notifyHref = `mailto:${paymentContactEmail}?subject=${encodeURIComponent(
-          `Zelle payment sent — ${pkg.name}`
+          `Zelle payment sent, ${pkg.name}`
         )}&body=${encodeURIComponent(
           `Hi Solstice Privé,\n\nI've sent my $${deposit.toLocaleString()} deposit for ${pkg.name} via Zelle.\n\nFull name:\nTrip name: ${pkg.name}\n`
         )}`;
@@ -48,7 +48,7 @@ export default function BookingOptions({
             </div>
 
             <div className={styles.paymentMethod}>
-              <span className={styles.paymentMethodTitle}>Pay by ACH / Zelle / Wire — no fee</span>
+              <span className={styles.paymentMethodTitle}>Pay by ACH / Zelle / Wire, no fee</span>
               <p className={styles.paymentMethodText}>
                 Send your ${deposit.toLocaleString()} deposit via Zelle to{" "}
                 <strong>{paymentContactEmail}</strong>.

@@ -112,7 +112,7 @@ export default function TripForm({ trip, action }: TripFormProps) {
         </LinkButton>
       </div>
       <p className={styles.note}>
-        This form isn&apos;t connected to a live database yet — changes are kept in memory for
+        This form isn&apos;t connected to a live database yet. Changes are kept in memory for
         this session.
       </p>
     </form>

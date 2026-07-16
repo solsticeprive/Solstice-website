@@ -51,7 +51,6 @@ export default function Hero() {
             <div className={styles.captionWrap}>
               <div className={styles.caption}>
                 <div className={styles.kickerRow}>
-                  <span className={styles.kickerLine} />
                   <span className={styles.kicker}>{slide.kicker}</span>
                 </div>
                 <h1 className={styles.title}>

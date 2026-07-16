@@ -54,7 +54,7 @@ const trips: Trip[] = [
     tag: "Active Retirees",
     location: "Kyoto, Japan",
     description:
-      "Because retirement is not the end of the adventure — it's the beginning of your next chapter.",
+      "Because retirement is not the end of the adventure. It's the beginning of your next chapter.",
     startDate: "2027-01-14",
     endDate: "2027-01-24",
     capacity: 30,

@@ -124,7 +124,7 @@ export const collections: Collection[] = [
   {
     tag: "Active Retirees",
     title: "Golden Horizons Club",
-    desc: "Because retirement is not the end of the adventure — it's the beginning of your next chapter.",
+    desc: "Because retirement is not the end of the adventure. It's the beginning of your next chapter.",
     gradient: "linear-gradient(150deg, #f58f00, #b8862b)",
     image: "https://images.unsplash.com/photo-1748969721837-2b290323022b?w=900&q=80",
     alt: "An older couple holding hands while hiking a scenic trail",
@@ -519,9 +519,9 @@ export const manifesto = {
     },
   ],
   paragraphs: [
-    "At Solstice Privé, we don't just plan trips — we curate unforgettable journeys that connect people, cultures, and extraordinary experiences.",
+    "At Solstice Privé, we don't just plan trips. We curate unforgettable journeys that connect people, cultures, and extraordinary experiences.",
     "We are a luxury travel community created for curious travelers who want more than a vacation. Our journeys are intentionally designed to immerse you in the heart of each destination through authentic culture, exceptional hospitality, meaningful connections, and experiences you simply can't recreate on your own.",
-    "Built on three guiding principles — Discover. Connect. Transform. — every Solstice Privé experience invites you to see the world differently. Whether you're celebrating life's milestones, exploring with friends, traveling solo, investing in your wellness, or stepping into a new adventure, we believe the best memories are created when travel is shared.",
+    "Built on three guiding principles. Discover. Connect. Transform. Every Solstice Privé experience invites you to see the world differently. Whether you're celebrating life's milestones, exploring with friends, traveling solo, investing in your wellness, or stepping into a new adventure, we believe the best memories are created when travel is shared.",
     "From vibrant festivals and hidden cultural gems to wellness retreats, culinary discoveries, luxury accommodations, and once-in-a-lifetime moments, our goal is simple: to create journeys that leave you inspired long after you've returned home.",
     "Because for us, travel isn't just about checking countries off a list. It's about collecting stories, building lifelong friendships, embracing new perspectives, and returning home with a fuller heart.",
   ],

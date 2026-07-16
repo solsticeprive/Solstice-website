@@ -14,7 +14,7 @@ export default function Why() {
           </h2>
           <p className={styles.copy}>
             Whether you&apos;re celebrating a milestone, looking for love, reconnecting with your
-            spouse, prioritizing your health, or ready to explore with like-minded people — every
+            spouse, prioritizing your health, or ready to explore with like-minded people. Every
             experience is designed entirely around you.
           </p>
         </Reveal>
