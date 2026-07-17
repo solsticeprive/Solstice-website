@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "@/components/Reveal/Reveal";
 import BookingOptions from "@/components/BookingOptions/BookingOptions";
 import { lagosItinerary } from "@/lib/content";
@@ -123,6 +124,13 @@ export default function ItineraryDetail() {
                 <li key={term}>{term}</li>
               ))}
             </ul>
+            <p className={styles.policyLinkNote}>
+              By submitting your deposit, you agree to our{" "}
+              <Link href="/cancellation-policy" className={styles.policyLink}>
+                Cancellation &amp; Refund Policy
+              </Link>
+              .
+            </p>
           </Reveal>
 
           <Reveal className={styles.ctaWrap}>

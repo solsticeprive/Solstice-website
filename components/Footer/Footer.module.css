@@ -53,6 +53,17 @@
   background: rgba(245, 143, 0, 0.08);
 }
 
+.legalLink {
+  color: rgba(251, 246, 238, 0.5);
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.legalLink:hover {
+  color: var(--color-accent);
+}
+
 .copyright {
   color: rgba(251, 246, 238, 0.45);
   font-size: 13px;

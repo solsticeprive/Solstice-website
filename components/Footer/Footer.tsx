@@ -37,6 +37,9 @@ export default function Footer() {
             );
           })}
         </div>
+        <Link href="/cancellation-policy" className={styles.legalLink}>
+          Cancellation &amp; Refund Policy
+        </Link>
         <span className={styles.copyright}>© 2026 Solstice Privé</span>
       </div>
     </footer>

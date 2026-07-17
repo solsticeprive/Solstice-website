@@ -473,6 +473,52 @@ export const lagosItinerary = {
   ] as ItineraryPhase[],
 };
 
+export const cancellationPolicy = {
+  title: "Cancellation & Refund Policy",
+  intro: "By submitting your deposit, you acknowledge and agree to the following cancellation terms.",
+  sections: [
+    {
+      heading: "Non-Refundable Deposit",
+      body: [
+        "A non-refundable, non-transferable deposit is required to secure your reservation. Your space is not confirmed until the deposit has been received.",
+      ],
+    },
+    {
+      heading: "Payments",
+      body: [
+        "Because Solstice Privé makes advance payments to hotels, transportation providers, activity operators, and other suppliers on your behalf, all payments made toward your trip are generally non-refundable.",
+        "If a cancellation occurs, any refund will be limited to amounts, if any, recovered from our suppliers, less the non-refundable deposit, payment processing fees, administrative costs, and any other non-recoverable expenses already incurred.",
+      ],
+    },
+    {
+      heading: "Reservation Transfers",
+      body: [
+        "If you are unable to travel, you may request to transfer your reservation to another eligible traveler. All transfers are subject to supplier approval, availability, applicable deadlines, and any name-change or administrative fees.",
+      ],
+    },
+    {
+      heading: "Trip Cancellation by Solstice Privé",
+      body: [
+        "If Solstice Privé cancels a trip for reasons other than force majeure, travelers will receive a refund of all monies paid to Solstice Privé, excluding any third-party fees that cannot be recovered from suppliers.",
+      ],
+    },
+    {
+      heading: "Force Majeure",
+      body: [
+        "Solstice Privé shall not be responsible for cancellations, delays, or changes caused by events beyond our reasonable control, including but not limited to natural disasters, severe weather, pandemics, government actions, civil unrest, airline disruptions, strikes, or other unforeseen circumstances. Refunds, if any, will be subject to the refund policies of our suppliers.",
+      ],
+    },
+    {
+      heading: "Travel Insurance",
+      body: [
+        "We strongly recommend purchasing comprehensive travel insurance, including trip cancellation, trip interruption, medical coverage, and baggage protection. Many circumstances that prevent travel are covered only through travel insurance and not through Solstice Privé's cancellation policy.",
+      ],
+    },
+  ],
+  closing:
+    "Failure to make scheduled monthly payments may result in cancellation of your reservation. All amounts previously paid will be forfeited, and your reservation may be released to another traveler without further notice.",
+};
+
 export const visaConcierge = {
   eyebrow: "Concierge Support",
   title: "Visa Concierge Service",
