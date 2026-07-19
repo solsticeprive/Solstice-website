@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import Reveal from "@/components/Reveal/Reveal";
-import { galleryImages } from "@/lib/content";
+import { galleryItems } from "@/lib/content";
 import styles from "./Gallery.module.css";
 
 export default function Gallery() {
@@ -11,11 +11,11 @@ export default function Gallery() {
 
   const close = useCallback(() => setActiveIndex(null), []);
   const showPrev = useCallback(
-    () => setActiveIndex((i) => (i === null ? null : (i - 1 + galleryImages.length) % galleryImages.length)),
+    () => setActiveIndex((i) => (i === null ? null : (i - 1 + galleryItems.length) % galleryItems.length)),
     []
   );
   const showNext = useCallback(
-    () => setActiveIndex((i) => (i === null ? null : (i + 1) % galleryImages.length)),
+    () => setActiveIndex((i) => (i === null ? null : (i + 1) % galleryItems.length)),
     []
   );
 
@@ -37,7 +37,7 @@ export default function Gallery() {
     };
   }, [activeIndex, close, showPrev, showNext]);
 
-  const active = activeIndex === null ? null : galleryImages[activeIndex];
+  const active = activeIndex === null ? null : galleryItems[activeIndex];
 
   return (
     <>
@@ -56,22 +56,27 @@ export default function Gallery() {
 
       <section className={styles.body}>
         <div className={styles.grid}>
-          {galleryImages.map((item, index) => (
-            <Reveal key={item.image} delay={(index % 4) as 0 | 1 | 2 | 3} className={styles.item}>
+          {galleryItems.map((item, index) => (
+            <Reveal key={item.src} delay={(index % 4) as 0 | 1 | 2 | 3} className={styles.item}>
               <button
                 type="button"
                 className={styles.itemButton}
                 onClick={() => setActiveIndex(index)}
-                aria-label={`View larger image: ${item.caption}`}
+                aria-label={`View ${item.kind === "video" ? "video" : "larger image"}: ${item.caption}`}
               >
                 <Image
-                  src={item.image}
+                  src={item.kind === "video" ? item.poster : item.src}
                   alt={item.alt}
                   width={item.width}
                   height={item.height}
                   sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw"
                   className={styles.itemImage}
                 />
+                {item.kind === "video" && (
+                  <span className={styles.playBadge} aria-hidden="true">
+                    ▶
+                  </span>
+                )}
                 <span className={styles.itemScrim} />
                 <span className={styles.itemCaption}>{item.caption}</span>
               </button>
@@ -92,20 +97,31 @@ export default function Gallery() {
               event.stopPropagation();
               showPrev();
             }}
-            aria-label="Previous image"
+            aria-label="Previous item"
           >
             ←
           </button>
           <div className={styles.lightboxContent} onClick={(event) => event.stopPropagation()}>
-            <Image
-              src={active.image}
-              alt={active.alt}
-              width={active.width}
-              height={active.height}
-              sizes="90vw"
-              className={styles.lightboxImage}
-              priority
-            />
+            {active.kind === "video" ? (
+              <video
+                src={active.src}
+                poster={active.poster}
+                controls
+                autoPlay
+                playsInline
+                className={styles.lightboxVideo}
+              />
+            ) : (
+              <Image
+                src={active.src}
+                alt={active.alt}
+                width={active.width}
+                height={active.height}
+                sizes="90vw"
+                className={styles.lightboxImage}
+                priority
+              />
+            )}
             <p className={styles.lightboxCaption}>{active.caption}</p>
           </div>
           <button
@@ -115,7 +131,7 @@ export default function Gallery() {
               event.stopPropagation();
               showNext();
             }}
-            aria-label="Next image"
+            aria-label="Next item"
           >
             →
           </button>

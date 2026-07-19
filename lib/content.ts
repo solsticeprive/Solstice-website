@@ -594,80 +594,145 @@ export const manifesto = {
   closingLine: "Your passport opens the door. Solstice Privé opens the experience.",
 };
 
-export interface GalleryImage {
-  image: string;
+export interface GalleryPhoto {
+  kind: "photo";
+  src: string;
   alt: string;
   caption: string;
   width: number;
   height: number;
 }
 
-export const galleryImages: GalleryImage[] = [
+export interface GalleryVideo {
+  kind: "video";
+  src: string;
+  poster: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+}
+
+export type GalleryItem = GalleryPhoto | GalleryVideo;
+
+export const galleryItems: GalleryItem[] = [
   {
-    image: "/assets/img-1.jpeg",
+    kind: "photo",
+    src: "/assets/img-1.jpeg",
     alt: "Two travelers posing in front of the Taj Mahal, India",
     caption: "The Taj Mahal, India",
     width: 3024,
     height: 4032,
   },
   {
-    image: "/assets/img-9.jpeg",
+    kind: "video",
+    src: "/assets/video-1.mp4",
+    poster: "/assets/video-1-poster.jpg",
+    alt: "Crowds crossing the famous Shibuya scramble crossing in Tokyo, Japan",
+    caption: "Shibuya Crossing, Tokyo",
+    width: 576,
+    height: 1024,
+  },
+  {
+    kind: "photo",
+    src: "/assets/img-9.jpeg",
     alt: "Group celebrating a milestone birthday on a palm-lined terrace",
     caption: "Milestone Celebrations",
     width: 1600,
     height: 738,
   },
   {
-    image: "/assets/img-6.jpeg",
+    kind: "photo",
+    src: "/assets/img-12.jpeg",
+    alt: "The Eiffel Tower lit up at night in Paris, France",
+    caption: "Eiffel Tower at Night, Paris",
+    width: 768,
+    height: 1024,
+  },
+  {
+    kind: "photo",
+    src: "/assets/img-6.jpeg",
     alt: "Traveler in colorful outfit on the steps of a Japanese shrine",
     caption: "Temple Steps, Japan",
     width: 768,
     height: 1024,
   },
   {
-    image: "/assets/img-3.jpeg",
+    kind: "photo",
+    src: "/assets/img-3.jpeg",
     alt: "Travelers dressed in traditional Thai attire for a cultural ceremony",
     caption: "Cultural Traditions, Thailand",
     width: 900,
     height: 1600,
   },
   {
-    image: "/assets/img-8.jpeg",
+    kind: "photo",
+    src: "/assets/img-13.jpeg",
+    alt: "Ornate golden armillary sphere fountain inside The Venetian, Las Vegas",
+    caption: "The Venetian, Las Vegas",
+    width: 768,
+    height: 1024,
+  },
+  {
+    kind: "photo",
+    src: "/assets/img-8.jpeg",
     alt: "Crowd gathered at the Super Nintendo World entrance, Universal Studios Japan",
     caption: "Universal Studios Japan",
     width: 768,
     height: 1024,
   },
   {
-    image: "/assets/img-4.jpeg",
+    kind: "video",
+    src: "/assets/video-2.mp4",
+    poster: "/assets/video-2-poster.jpg",
+    alt: "Group of friends in white outfits celebrating aboard a boat at sea",
+    caption: "Celebrating at Sea",
+    width: 720,
+    height: 1280,
+  },
+  {
+    kind: "photo",
+    src: "/assets/img-4.jpeg",
     alt: "Friends enjoying an evening dinner overlooking the Adriatic coastline",
     caption: "Dinner With a View",
     width: 768,
     height: 1024,
   },
   {
-    image: "/assets/img-10.jpeg",
+    kind: "photo",
+    src: "/assets/img-10.jpeg",
     alt: "Large group photo celebrating a 40th birthday trip together",
     caption: "Turning 40 in Paradise",
     width: 1600,
     height: 794,
   },
   {
-    image: "/assets/img-7.jpeg",
+    kind: "photo",
+    src: "/assets/img-11.jpeg",
+    alt: "Traveler with arms outstretched on a lively night market street in Osaka, Japan",
+    caption: "Streets of Osaka, Japan",
+    width: 1920,
+    height: 2560,
+  },
+  {
+    kind: "photo",
+    src: "/assets/img-7.jpeg",
     alt: "Friends posing on shrine steps beside a stone lion statue in Japan",
     caption: "Temple Visits, Japan",
     width: 768,
     height: 1024,
   },
   {
-    image: "/assets/img-2.jpeg",
+    kind: "photo",
+    src: "/assets/img-2.jpeg",
     alt: "Group of friends posing together on a volcanic coastal viewpoint",
     caption: "Island Adventures",
     width: 1200,
     height: 1600,
   },
   {
-    image: "/assets/img-5.jpeg",
+    kind: "photo",
+    src: "/assets/img-5.jpeg",
     alt: "Group enjoying an ice cream stop together while traveling",
     caption: "Sweet Stops Along the Way",
     width: 900,
