@@ -1,0 +1,254 @@
+.hero {
+  background: var(--color-dark-deep);
+  padding: 160px 56px 72px;
+  text-align: center;
+}
+
+.heroInner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  color: var(--color-accent);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.1;
+  margin: 18px 0 18px;
+  color: #fff;
+}
+
+.titleItalic {
+  font-style: italic;
+  color: var(--color-gold-light);
+}
+
+.intro {
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+.body {
+  background: var(--color-bg);
+  padding: 64px 40px 120px;
+}
+
+.grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  column-count: 3;
+  column-gap: 18px;
+}
+
+.item {
+  break-inside: avoid;
+  margin-bottom: 18px;
+}
+
+.itemButton {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  background: none;
+  box-shadow: 0 18px 36px rgba(33, 27, 22, 0.14);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.itemButton:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 48px rgba(33, 27, 22, 0.22);
+}
+
+.itemImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.itemButton:hover .itemImage {
+  transform: scale(1.04);
+}
+
+.itemScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 11, 9, 0) 60%, rgba(16, 11, 9, 0.75) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.itemButton:hover .itemScrim {
+  opacity: 1;
+}
+
+.itemCaption {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  right: 16px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.itemButton:hover .itemCaption {
+  opacity: 1;
+  transform: none;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(16, 11, 9, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  animation: fadeIn 0.2s ease;
+}
+
+.lightboxContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: min(90vw, 1000px);
+  max-height: 90vh;
+}
+
+.lightboxImage {
+  width: auto;
+  height: auto;
+  max-width: min(90vw, 1000px);
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.lightboxCaption {
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.lightboxClose:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lightboxPrev,
+.lightboxNext {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.lightboxPrev:hover,
+.lightboxNext:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lightboxPrev {
+  left: 24px;
+}
+
+.lightboxNext {
+  right: 24px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 130px 24px 56px;
+  }
+
+  .body {
+    padding: 48px 20px 90px;
+  }
+}
+
+@media (max-width: 560px) {
+  .grid {
+    column-count: 1;
+  }
+
+  .lightboxPrev,
+  .lightboxNext {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .lightboxPrev {
+    left: 10px;
+  }
+
+  .lightboxNext {
+    right: 10px;
+  }
+
+  .lightboxClose {
+    top: 12px;
+    right: 12px;
+  }
+}

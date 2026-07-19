@@ -108,7 +108,7 @@ export const collections: Collection[] = [
     title: "Second Chapter Society",
     desc: "For accomplished men and women ready to meet, travel, connect, and create new possibilities.",
     gradient: "linear-gradient(150deg, #bf9bae, #8c6478)",
-    image: "https://images.unsplash.com/photo-1645518044910-8223215a9909?w=900&q=80",
+    image: "/assets/img-4.jpeg",
     alt: "A man and woman laughing together over wine at an outdoor table",
     comingSoon: true,
   },
@@ -126,7 +126,7 @@ export const collections: Collection[] = [
     title: "Golden Horizons Club",
     desc: "Because retirement is not the end of the adventure. It's the beginning of your next chapter.",
     gradient: "linear-gradient(150deg, #f58f00, #b8862b)",
-    image: "https://images.unsplash.com/photo-1748969721837-2b290323022b?w=900&q=80",
+    image: "/assets/img-5.jpeg",
     alt: "An older couple holding hands while hiking a scenic trail",
     comingSoon: true,
   },
@@ -135,7 +135,7 @@ export const collections: Collection[] = [
     title: "Renew You Journey",
     desc: "World-class healthcare, wellness experiences, and recovery retreats in select destinations.",
     gradient: "linear-gradient(150deg, #bf9bae, #f58f00)",
-    image: "https://images.unsplash.com/photo-1630595271375-5073a6c0638b?w=900&q=80",
+    image: "/assets/img-6.jpeg",
     alt: "Woman in a spa robe relaxing with tea",
     comingSoon: true,
   },
@@ -144,7 +144,7 @@ export const collections: Collection[] = [
     title: "Black Excellence Experiences",
     desc: "Curated luxury travel celebrating culture, achievement, networking, and legacy.",
     gradient: "linear-gradient(150deg, #f58f00, #8a5a1f)",
-    image: "https://images.unsplash.com/photo-1573164574511-73c773193279?w=900&q=80",
+    image: "/assets/img-10.jpeg",
     alt: "Group of Black professionals in a boardroom meeting",
     comingSoon: true,
   },
@@ -556,7 +556,7 @@ export const manifesto = {
       alt: "Cliffside view of a turquoise beach cove in Bali, Indonesia",
     },
     {
-      image: "https://images.unsplash.com/photo-1645518044910-8223215a9909?w=900&q=80",
+      image: "/assets/img-2.jpeg",
       alt: "A man and woman laughing together over wine at an outdoor table",
     },
     {
@@ -581,15 +581,96 @@ export const manifesto = {
     {
       num: "02",
       label: "Connect",
-      image: "https://images.unsplash.com/photo-1649019182102-dea1e156d94f?w=900&q=80",
+      image: "/assets/img-1.jpeg",
       alt: "Three women toasting with champagne glasses",
     },
     {
       num: "03",
       label: "Transform",
-      image: "https://images.unsplash.com/photo-1630595271375-5073a6c0638b?w=900&q=80",
+      image: "/assets/img-3.jpeg",
       alt: "Woman in a spa robe relaxing with tea",
     },
   ],
   closingLine: "Your passport opens the door. Solstice Privé opens the experience.",
 };
+
+export interface GalleryImage {
+  image: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+}
+
+export const galleryImages: GalleryImage[] = [
+  {
+    image: "/assets/img-1.jpeg",
+    alt: "Two travelers posing in front of the Taj Mahal, India",
+    caption: "The Taj Mahal, India",
+    width: 3024,
+    height: 4032,
+  },
+  {
+    image: "/assets/img-9.jpeg",
+    alt: "Group celebrating a milestone birthday on a palm-lined terrace",
+    caption: "Milestone Celebrations",
+    width: 1600,
+    height: 738,
+  },
+  {
+    image: "/assets/img-6.jpeg",
+    alt: "Traveler in colorful outfit on the steps of a Japanese shrine",
+    caption: "Temple Steps, Japan",
+    width: 768,
+    height: 1024,
+  },
+  {
+    image: "/assets/img-3.jpeg",
+    alt: "Travelers dressed in traditional Thai attire for a cultural ceremony",
+    caption: "Cultural Traditions, Thailand",
+    width: 900,
+    height: 1600,
+  },
+  {
+    image: "/assets/img-8.jpeg",
+    alt: "Crowd gathered at the Super Nintendo World entrance, Universal Studios Japan",
+    caption: "Universal Studios Japan",
+    width: 768,
+    height: 1024,
+  },
+  {
+    image: "/assets/img-4.jpeg",
+    alt: "Friends enjoying an evening dinner overlooking the Adriatic coastline",
+    caption: "Dinner With a View",
+    width: 768,
+    height: 1024,
+  },
+  {
+    image: "/assets/img-10.jpeg",
+    alt: "Large group photo celebrating a 40th birthday trip together",
+    caption: "Turning 40 in Paradise",
+    width: 1600,
+    height: 794,
+  },
+  {
+    image: "/assets/img-7.jpeg",
+    alt: "Friends posing on shrine steps beside a stone lion statue in Japan",
+    caption: "Temple Visits, Japan",
+    width: 768,
+    height: 1024,
+  },
+  {
+    image: "/assets/img-2.jpeg",
+    alt: "Group of friends posing together on a volcanic coastal viewpoint",
+    caption: "Island Adventures",
+    width: 1200,
+    height: 1600,
+  },
+  {
+    image: "/assets/img-5.jpeg",
+    alt: "Group enjoying an ice cream stop together while traveling",
+    caption: "Sweet Stops Along the Way",
+    width: 900,
+    height: 1600,
+  },
+];

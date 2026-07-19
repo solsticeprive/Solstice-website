@@ -9,6 +9,7 @@ const links = [
   { href: "/#experiences", label: "Experiences" },
   { href: "/#difference", label: "Our Difference" },
   { href: "/#story", label: "Story" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/#visa", label: "Visa Support" },
 ];
 
